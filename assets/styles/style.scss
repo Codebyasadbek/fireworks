@@ -1,0 +1,383 @@
+/* =====================================================================
+   ПОВЕЛИТЕЛЬ ОГНЯ — лендинг
+   Структура файла:
+     1. Переменные
+     2. Подключение шрифта Gilroy
+     3. Сброс стилей (reset)
+     4. Базовые стили и контейнер
+     5. Шапка сайта (header + логотип)
+     6. Первый экран (hero)
+     7. Кнопки
+     8. Адаптив (планшет / мобильные)
+   ===================================================================== */
+
+
+/* ============ 1. Переменные ============ */
+$color-orange: #F97316; // основной фирменный (акцент, кнопка)
+$color-orange-dark: #E8620B; // наведение на оранжевую кнопку
+$color-heading: #1B2533; // заголовки, тёмный текст
+$color-text: #5C6B7A; // основной текст (приглушённый)
+$color-cream: #F6EFE8; // тёплая подложка первого экрана
+$color-white: #FFFFFF;
+$color-logo-top: #A65A4D; // «Повелитель» в логотипе
+$color-logo-bottom: #2B3742; // «огня» в логотипе
+
+// Шрифт: сначала Gilroy (если добавлен в assets/fonts),
+// затем близкий Manrope, затем системный
+$font-main: 'Gilroy', sans-serif;
+
+$container: 1280px; // ширина контейнера первого экрана
+$container-pad: 80px; // боковые отступы контейнера (десктоп)
+$header-pad: 26px; // отступ шапки (слева и сверху)
+$radius: 12px; // радиус скругления кнопок
+
+
+/* ============ 2. Подключение шрифта Gilroy ============
+   Раскомментируйте блок и положите файлы шрифта в assets/fonts/,
+   чтобы использовать фирменный Gilroy. До этого работает Manrope. */
+/*
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/Gilroy-Extrabold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+
+/* ============ 3. Сброс стилей ============ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img,
+picture {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+
+/* ============ 4. Базовые стили и контейнер ============ */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $font-main;
+    color: $color-text;
+    background-color: $color-white;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// Центрированный контейнер первого экрана
+.container {
+    width: 100%;
+    max-width: $container;
+    margin: 0 auto;
+    padding-left: $container-pad;
+    padding-right: $container-pad;
+}
+
+
+/* ============ 5. Шапка сайта ============ */
+.header {
+    position: absolute; // шапка лежит поверх первого экрана
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.header_container {
+    width: 100%;
+    max-width: $container;
+    margin: 0 auto;
+    padding: 26px;
+}
+
+// Логотип: эмблема + текстовая часть
+.logo {
+    width: 70px;
+    height: 70px;
+    display: block;
+
+    &__icon {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+/* ============ 6. Первый экран (hero) ============ */
+.hero {
+    position: relative;
+    min-height: 720px;
+    overflow: hidden;
+    background-color: $color-cream;
+
+    // Фоновое изображение
+    &__bg,
+    &__bg-img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__bg-img {
+        object-fit: cover;
+        object-position: center;
+    }
+
+    // Тёплая подложка: слева плотная, справа прозрачная
+    &__overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg,
+            #{$color-cream} 0%,
+            #FFF8F0 18%,
+            rgba(246, 239, 232, 0.62) 46%,
+            rgba(246, 239, 232, 0.15) 64%,
+            rgba(246, 239, 232, 0) 70%);
+    }
+
+    // Контент поверх фона
+    &__container {
+        position: relative;
+        z-index: 2;
+        padding-top: 143px;
+        padding-bottom: 80px;
+    }
+
+    &__badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #F97316;
+        font-family: $font-main;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        padding: 8px 8px 8px 16px;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        background: rgba(255, 248, 240, 0.20);
+        backdrop-filter: blur(40px);
+    }
+
+    &__badge-icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    &__title {
+        margin-top: 36px;
+        margin-bottom: 8px;
+        max-width: 513px;
+        color: #2D2420;
+        font-family: $font-main;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+    }
+
+    &__text {
+        max-width: 588px;
+        color: #8A7E78;
+        font-family: $font-main;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+
+    &__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 36px;
+    }
+}
+
+
+/* ============ 7. Кнопки ============ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    border: none;
+    color: #FFF;
+    font-family: $font-main;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border-radius: 16px;
+    cursor: pointer;
+
+    transition: background-color 0.2s ease, transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+    // Основная — оранжевая
+    &--primary {
+        border-radius: 16px;
+        background: #F97316;
+        color: $color-white;
+        transition: all .3s ease;
+
+        &:hover {
+            background: #E95F00;
+        }
+    }
+
+    // Второстепенная — светлая
+    &--secondary {
+        color: #7C2D12;
+        border-radius: 16px;
+        border: 1px solid rgba(124, 45, 18, 0.20);
+        background: rgba(255, 255, 255, 0.40);
+        backdrop-filter: blur(20px);
+        transition: all .3s ease;
+
+        &:hover {
+            color: #FFF;
+            border-radius: 16px;
+            border: 1px solid rgba(124, 45, 18, 0.20);
+            background: rgba(124, 45, 18, 0.40);
+            backdrop-filter: blur(20px);
+        }
+    }
+}
+
+
+/* ============ 8. Адаптив ============ */
+
+// Планшет (≤ 1024px)
+@media (max-width: 1024px) {
+    .container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .hero__title {
+        font-size: 48px;
+    }
+}
+
+// Планшет / малый десктоп (≤ 768px)
+@media (max-width: 768px) {
+    .hero {
+        min-height: 640px;
+
+        // На мобильном фон снизу светлее, текст остаётся читаемым сверху
+        &__overlay {
+            background: linear-gradient(180deg,
+                #{$color-cream} 0%,
+                rgba(246, 239, 232, 0.92) 42%,
+                rgba(246, 239, 232, 0.55) 68%,
+                rgba(246, 239, 232, 0.2) 100%);
+        }
+
+        &__container {
+            padding-top: 130px;
+        }
+
+        &__title {
+            font-size: 40px;
+            max-width: 440px;
+        }
+    }
+}
+
+// Мобильные (≤ 480px)
+@media (max-width: 480px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .header {
+        padding: 20px;
+    }
+
+    .logo__text-bottom {
+        font-size: 18px;
+    }
+
+    .hero {
+        &__container {
+            padding-top: 120px;
+        }
+
+        // На узких экранах перенос строк в заголовке убираем
+        &__title {
+            font-size: 32px;
+
+            br {
+                display: none;
+            }
+        }
+
+        &__text {
+            font-size: 16px;
+        }
+
+        &__actions {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .btn {
+            width: 100%;
+        }
+    }
+}

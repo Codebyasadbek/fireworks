@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Повелитель огня — оптовая пиротехника для праздников</title>
+    <meta name="description"
+        content="Оптовая пиротехника от компании «Повелитель огня». Помогаем создавать волшебные моменты для тысяч людей по всей России.">
+
+    <!-- Резервный шрифт (Manrope) на случай отсутствия Gilroy -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Стили проекта -->
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+
+<body>
+
+    <!-- ============ Шапка сайта ============ -->
+    <header class="header">
+        <div class="header_container">
+            <a href="#" class="logo" aria-label="Повелитель огня — на главную">
+                <img src="assets/images/logo.svg" alt="" class="logo__icon" width="177" height="120">
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- ============ Первый экран (Hero) ============ -->
+        <section class="hero">
+            <!-- Фоновое изображение: WebP + PNG, отдельная версия для мобильных -->
+            <picture class="hero__bg">
+                <source media="(max-width: 767px)" srcset="assets/images/hero_bg-mobile.webp" type="image/webp">
+                <source media="(max-width: 767px)" srcset="assets/images/hero_bg-mobile.png">
+                <source srcset="assets/images/hero_bg.webp" type="image/webp">
+                <img src="assets/images/hero_bg.png" alt="" class="hero__bg-img" fetchpriority="high">
+            </picture>
+
+            <!-- Осветляющая подложка под текстом -->
+            <div class="hero__overlay"></div>
+
+            <!-- Контент первого экрана -->
+            <div class="container hero__container">
+                <p class="hero__badge">
+                    <span>Готовимся к Новому году 2027</span>
+                    <img src="assets/images/tree.svg" alt="" class="hero__badge-icon" width="24" height="24">
+                </p>
+
+                <h1 class="hero__title">
+                    Подарите праздник,<br>
+                    который запомнится<br>
+                    навсегда
+                </h1>
+
+                <p class="hero__text">
+                    Оптовая пиротехника от компании «Повелитель огня».
+                    Мы помогаем создавать волшебные моменты для тысяч людей по всей России.
+                </p>
+
+                <div class="hero__actions">
+                    <a href="#" class="btn btn--primary">Стать партнёром</a>
+                    <a href="#" class="btn btn--secondary">Купить в розницу</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/script.js" defer></script>
+</body>
+
+</html>
