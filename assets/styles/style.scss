@@ -338,46 +338,74 @@ body {
     }
 }
 
-// Мобильные (≤ 480px)
+// Мобильные (≤ 480px) — макет под ширину 375px, 1:1 с дизайном
 @media (max-width: 480px) {
     .container {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 28px;
+        padding-right: 28px;
     }
 
-    .header {
-        padding: 20px;
+    .header_container {
+        padding: 20px 28px;
     }
 
-    .logo__text-bottom {
-        font-size: 18px;
+    // Логотип (эмблема + название) на мобильном компактнее
+    .logo {
+        width: 54px;
+        height: 54px;
     }
 
     .hero {
+        min-height: 100svh;
+
         &__container {
-            padding-top: 120px;
+            padding-top: 88px;
+            padding-bottom: 56px;
         }
 
-        // На узких экранах перенос строк в заголовке убираем
-        &__title {
-            font-size: 32px;
+        // Плашка помещается в одну строку, ёлка сразу после текста
+        &__badge {
+            gap: 6px;
+            font-size: 15px;
+            padding: 7px 7px 7px 14px;
+            border-radius: 14px;
+        }
 
+        &__badge-icon {
+            width: 18px;
+            height: 18px;
+        }
+
+        &__title {
+            margin-top: 26px;
+            margin-bottom: 14px;
+            max-width: none;
+            font-size: 28px;
+
+            // Переносы строк — как в макете (три строки)
             br {
-                display: none;
+                display: inline;
             }
         }
 
         &__text {
-            font-size: 16px;
+            max-width: none;
+            font-size: 17px;
+            font-weight: 500;
         }
 
         &__actions {
             flex-direction: column;
             align-items: stretch;
+            gap: 10px;
+            margin-top: 30px;
         }
 
         .btn {
             width: 100%;
+            padding: 15px 16px;
+            font-size: 18px;
+            border-radius: 16px;
         }
     }
 }
