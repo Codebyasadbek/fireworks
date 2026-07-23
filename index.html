@@ -622,6 +622,72 @@
                 </form>
             </div>
         </section>
+
+        <!-- ============ Прайс-лист для партнёров ============ -->
+        <section class="price-list" id="price-list">
+            <div class="container price-list__container">
+                <div class="price-list__content">
+                    <p class="price-list__badge">Для партнёров</p>
+                    <h2 class="price-list__title">Закрытый прайс-лист со<br>специальными условиями</h2>
+                    <p class="price-list__subtitle">Оставьте контакты — пришлём каталог с выгодными ценами для первого
+                        заказа</p>
+
+                    <form class="price-list__form" id="priceForm" action="sendmail.php" method="post">
+                        <!-- Переключатель типа клиента (работает без JS) -->
+                        <div class="price-list__toggle">
+                            <input type="radio" name="client_type" id="pl-legal" class="price-list__toggle-input"
+                                value="Я ИП/Юрлицо" checked>
+                            <label for="pl-legal" class="price-list__toggle-label">Я ИП/Юрлицо</label>
+
+                            <input type="radio" name="client_type" id="pl-person" class="price-list__toggle-input"
+                                value="Физическое лицо">
+                            <label for="pl-person" class="price-list__toggle-label">Физическое лицо</label>
+                        </div>
+
+                        <label class="price-list__field">
+                            <span class="price-list__field-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="8" r="4" />
+                                    <path d="M4 20c0-4 3.6-6.5 8-6.5S20 16 20 20" />
+                                </svg>
+                            </span>
+                            <input type="text" name="name" class="price-list__input" placeholder="Имя"
+                                autocomplete="name" required>
+                        </label>
+
+                        <label class="price-list__field">
+                            <span class="price-list__field-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path
+                                        d="M22 16.9v2.6a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 3.9 2 2 0 0 1 4 1.7h2.6a2 2 0 0 1 2 1.7c.1.9.3 1.8.7 2.6a2 2 0 0 1-.5 2.1L7.6 9.4a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z" />
+                                </svg>
+                            </span>
+                            <input type="tel" name="phone" class="price-list__input" placeholder="Телефон"
+                                autocomplete="tel" required>
+                        </label>
+
+                        <label class="price-list__field">
+                            <span class="price-list__field-icon" aria-hidden="true">
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 21s7-6.4 7-11a7 7 0 1 0-14 0c0 4.6 7 11 7 11z" />
+                                    <circle cx="12" cy="10" r="2.6" />
+                                </svg>
+                            </span>
+                            <input type="text" name="city" class="price-list__input" placeholder="Город"
+                                autocomplete="address-level2" required>
+                        </label>
+
+                        <button type="submit" class="price-list__submit">Получить каталог</button>
+                    </form>
+                </div>
+            </div>
+
+            <img class="price-list__image" src="assets/images/pice-list_bg.png"
+                alt="Планшет с каталогом пиротехники" width="639" height="717" loading="lazy">
+        </section>
     </div>
 
     <script src="assets/js/script.js" defer></script>

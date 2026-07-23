@@ -221,60 +221,6 @@ body {
   display: none;
 }
 
-.quiz {
-  padding-top: 56px;
-  padding-bottom: 48px;
-}
-.quiz__title {
-  font-size: 26px;
-}
-.quiz__subtitle {
-  margin-top: 10px;
-  font-size: 17px;
-}
-.quiz__card {
-  margin-top: 24px;
-  padding: 20px;
-  border-radius: 20px;
-}
-.quiz__progress {
-  gap: 8px;
-}
-.quiz__progress-bar {
-  height: 5px;
-}
-.quiz__step {
-  margin-top: 24px;
-}
-.quiz__step-label {
-  font-size: 15px;
-}
-.quiz__question {
-  margin-top: 6px;
-  font-size: 19px;
-}
-.quiz__options {
-  margin-top: 20px;
-  gap: 16px;
-}
-.quiz__option {
-  gap: 12px;
-}
-.quiz__option-mark {
-  width: 22px;
-  height: 22px;
-}
-.quiz__option-text {
-  font-size: 16px;
-}
-.quiz__actions {
-  margin-top: 24px;
-}
-.quiz__next {
-  padding: 12px 24px;
-  font-size: 15px;
-}
-
 /* ============ Бегущая строка (Ticker) ============ */
 .ticker {
   position: absolute;
@@ -1028,175 +974,53 @@ body {
   }
 }
 
-/* ============ 8. Квиз «Собери свой праздник» ============ */
-.quiz {
-  padding-top: 80px;
-  padding-bottom: 80px;
-  background-color: #FFFFFF;
-}
-.quiz__title {
-  color: #2D2420;
-  font-family: "Gilroy", "Manrope", sans-serif;
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 1.2;
-}
-.quiz__subtitle {
-  margin-top: 12px;
-  color: #8A7E78;
-  font-family: "Gilroy", "Manrope", sans-serif;
-  font-size: 22px;
-  font-weight: 500;
-  line-height: 1.3;
-}
-.quiz__card {
-  margin-top: 40px;
-  padding: 40px;
-  background: #FFFFFF;
-  border: 1px solid #EFEAE4;
-  border-radius: 24px;
-  box-shadow: 0 20px 50px rgba(45, 36, 32, 0.05);
-}
-.quiz__progress {
-  display: flex;
-  gap: 12px;
-}
-.quiz__progress-bar {
-  flex: 1;
-  height: 6px;
-  border-radius: 999px;
-  background: #E7E2DC;
-}
-.quiz__progress-bar--active {
-  background: #1B2533;
-}
-.quiz__step {
-  margin-top: 32px;
-}
-.quiz__step-label {
-  color: #1B2533;
-  font-family: "Gilroy", "Manrope", sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: normal;
-}
-.quiz__question {
-  margin-top: 8px;
-  color: #1B2533;
-  font-family: "Gilroy", "Manrope", sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1.2;
-}
-.quiz__options {
-  margin-top: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
-.quiz__option {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-  cursor: pointer;
-  width: fit-content;
-}
-.quiz__radio {
-  position: absolute;
-  width: 0;
-  height: 0;
-  opacity: 0;
-}
-.quiz__option-mark {
-  position: relative;
-  flex: 0 0 auto;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  border: 2px solid rgba(249, 115, 22, 0.45);
-  transition: border-color 0.15s ease;
-}
-.quiz__radio:checked + .quiz__option-mark {
-  border-color: #F97316;
-}
-.quiz__radio:checked + .quiz__option-mark::after {
-  content: "";
-  position: absolute;
-  inset: 4px;
-  border-radius: 50%;
-  background: #F97316;
-}
-.quiz__option-text {
-  color: #7C2D12;
-  font-family: "Gilroy", "Manrope", sans-serif;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: normal;
-}
-.quiz__actions {
-  margin-top: 40px;
-  display: flex;
-  justify-content: flex-end;
-}
-.quiz__next {
-  padding: 14px 28px;
-  border: none;
-  border-radius: 999px;
-  background: #F97316;
-  color: #FFFFFF;
-  font-family: "Gilroy", "Manrope", sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: normal;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-.quiz__next:hover {
-  background: #E95F00;
-}
-
 /* ============ Квиз «Собери свой праздник» — интерактивный компонент ============
    Полное определение размещено в конце файла и переопределяет ранние стили. */
 .quiz {
-  padding-top: 80px;
-  padding-bottom: 80px;
-  background-color: #FFFFFF;
+  padding-top: 160px;
+  padding-bottom: 180px;
+  background-color: #FFF;
+}
+.quiz__container {
+  max-width: 980px;
 }
 .quiz__title {
   color: #2D2420;
   font-family: "Gilroy", "Manrope", sans-serif;
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 1.2;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: normal;
 }
 .quiz__subtitle {
-  margin-top: 12px;
+  margin-top: 16px;
   color: #8A7E78;
   font-family: "Gilroy", "Manrope", sans-serif;
-  font-size: 22px;
-  font-weight: 500;
-  line-height: 1.3;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 .quiz__card {
-  margin-top: 40px;
-  padding: 40px;
-  background: #FFFFFF;
-  border: 1px solid #EFEAE4;
-  border-radius: 24px;
-  box-shadow: 0 20px 50px rgba(45, 36, 32, 0.05);
+  margin-top: 48px;
+  padding: 32px 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(127, 138, 149, 0.1);
+  background: rgba(255, 255, 253, 0.4);
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(20px);
 }
 .quiz__progress {
   display: flex;
-  gap: 12px;
+  gap: 24px;
 }
 .quiz__progress-bar {
   flex: 1;
-  height: 6px;
-  border-radius: 999px;
-  background: #E7E2DC;
+  height: 4px;
+  border-radius: 32px;
+  background: #D9D9D9;
 }
 .quiz__progress-bar--active {
-  background: #1B2533;
+  background: #2E3448;
 }
 .quiz__progress[hidden] {
   display: none;
@@ -1209,30 +1033,32 @@ body {
   display: block;
 }
 .quiz__step-label {
-  color: #1B2533;
-  font-family: "Gilroy", "Manrope", sans-serif;
-  font-size: 18px;
-  font-weight: 600;
+  color: #2E3448;
+  font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
   line-height: normal;
 }
 .quiz__question {
   margin-top: 8px;
-  color: #1B2533;
-  font-family: "Gilroy", "Manrope", sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1.2;
+  color: #2E3448;
+  font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 .quiz__options {
-  margin-top: 28px;
+  margin-top: 32px;
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 18px;
 }
 .quiz__option {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   cursor: pointer;
   width: fit-content;
 }
@@ -1248,45 +1074,50 @@ body {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: 2px solid rgba(249, 115, 22, 0.45);
+  border: 2px solid #FE997F;
   transition: border-color 0.15s ease;
 }
 .quiz__radio:checked + .quiz__option-mark {
-  border-color: #F97316;
+  border-color: #FE997F;
 }
 .quiz__radio:checked + .quiz__option-mark::after {
   content: "";
   position: absolute;
-  inset: 4px;
+  inset: 0px;
   border-radius: 50%;
   background: #F97316;
 }
 .quiz__option-text {
   color: #7C2D12;
-  font-family: "Gilroy", "Manrope", sans-serif;
-  font-size: 22px;
-  font-weight: 600;
+  font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
   line-height: normal;
 }
 .quiz__slider {
   position: relative;
-  margin-top: 44px;
+  margin-top: 65px;
   padding-top: 62px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .quiz__slider-bubble {
   position: absolute;
-  top: 0;
+  top: -39px;
   left: 50%;
   transform: translateX(-50%);
-  padding: 10px 20px;
-  border-radius: 14px;
+  padding: 20px 25px;
+  border-radius: 64px;
   background: #F97316;
-  color: #FFFFFF;
-  font-family: "Gilroy", "Manrope", sans-serif;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 1;
-  white-space: nowrap;
+  color: #FFF;
+  text-align: center;
+  font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 .quiz__slider-bubble::after {
   content: "";
@@ -1295,24 +1126,24 @@ body {
   left: 50%;
   margin-top: -1px;
   transform: translateX(-50%);
-  border: 9px solid transparent;
+  border: 12px solid transparent;
   border-top-color: #F97316;
 }
 .quiz__range {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
-  height: 10px;
-  border-radius: 999px;
-  background: #FBDDCB;
+  height: 20px;
+  border-radius: 10px;
+  background: #FFD0C4;
   outline: none;
   cursor: pointer;
 }
 .quiz__range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 26px;
-  height: 26px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: #F97316;
   border: 5px solid #FFFFFF;
@@ -1320,8 +1151,8 @@ body {
   cursor: pointer;
 }
 .quiz__range::-moz-range-thumb {
-  width: 26px;
-  height: 26px;
+  width: 36px;
+  height: 36px;
   border: 5px solid #FFFFFF;
   border-radius: 50%;
   background: #F97316;
@@ -1336,30 +1167,33 @@ body {
   margin-top: 24px;
 }
 .quiz__chip {
-  padding: 10px 22px;
-  border-radius: 12px;
-  border: 1px solid #E7DBD1;
-  background: #FFFFFF;
-  color: #7C6A5F;
-  font-family: "Gilroy", "Manrope", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 40px;
+  border: 2px solid rgba(124, 45, 18, 0.5);
+  background: #FFF;
+  color: rgba(124, 45, 18, 0.5);
+  font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
   white-space: nowrap;
 }
 .quiz__slider-dash {
   flex: 0 0 auto;
-  width: 22px;
+  width: 32px;
   height: 2px;
   border-radius: 2px;
-  background: #C9BEB4;
+  background: #8B8B8B;
 }
 .quiz__form-title {
   text-align: center;
-  color: #1B2533;
-  font-family: "Gilroy", "Manrope", sans-serif;
-  font-size: 28px;
-  font-weight: 700;
-  line-height: 1.25;
+  color: #2E3448;
+  font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 .quiz__fields {
   margin-top: 32px;
@@ -1374,7 +1208,7 @@ body {
 .quiz__field-icon {
   position: absolute;
   top: 50%;
-  left: 22px;
+  left: 20px;
   transform: translateY(-50%);
   display: inline-flex;
   color: #A99E94;
@@ -1382,27 +1216,26 @@ body {
 }
 .quiz__input {
   width: 100%;
-  padding: 18px 22px 18px 56px;
-  border: 1px solid transparent;
-  border-radius: 14px;
-  background: #EFEBE6;
-  color: #2D2420;
+  padding: 12px 16px;
+  color: #9E9E9E;
   font-family: "Gilroy", "Manrope", sans-serif;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding-left: 56px;
   transition: border-color 0.15s ease, background-color 0.15s ease;
+  border-radius: 16px;
+  border: 1px solid rgba(124, 45, 18, 0.05);
+  background: rgba(242, 242, 242, 0.8);
 }
 .quiz__input::placeholder {
-  color: #A99E94;
-}
-.quiz__input:focus {
-  outline: none;
-  border-color: #F97316;
-  background: #FFFFFF;
-}
-.quiz__input.is-invalid {
-  border-color: #E5484D;
-  background: #FDF3F3;
+  color: #9E9E9E;
+  font-family: "Gilroy", "Manrope", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 .quiz__message {
   margin-top: 16px;
@@ -1461,14 +1294,15 @@ body {
   justify-content: center;
 }
 .quiz__next, .quiz__submit {
-  padding: 14px 28px;
+  padding: 8px 16px;
   border: none;
-  border-radius: 999px;
+  border-radius: 16px;
   background: #F97316;
-  color: #FFFFFF;
+  color: #FFF;
   font-family: "Gilroy", "Manrope", sans-serif;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
   line-height: normal;
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -1481,94 +1315,73 @@ body {
   cursor: default;
 }
 .quiz__submit {
-  padding: 16px 40px;
+  padding: 8px 16px;
 }
 .quiz__back {
-  padding: 14px 28px;
-  border: 1px solid #EDE6E0;
-  border-radius: 999px;
-  background: #FFFFFF;
+  padding: 8px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(124, 45, 18, 0.2);
+  background: rgba(255, 255, 255, 0.8);
   color: #7C2D12;
   font-family: "Gilroy", "Manrope", sans-serif;
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
   line-height: normal;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(45, 36, 32, 0.05);
   transition: background-color 0.2s ease;
 }
 .quiz__back:hover {
   background: #F7F3EF;
 }
 
-@media (max-width: 768px) {
-  .quiz {
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-  .quiz__title {
-    font-size: 32px;
-  }
-  .quiz__subtitle {
-    font-size: 19px;
-  }
-  .quiz__card {
-    padding: 32px;
-    border-radius: 22px;
-  }
-  .quiz__question {
-    font-size: 24px;
-  }
-  .quiz__option-text {
-    font-size: 19px;
-  }
-}
 @media (max-width: 480px) {
   .quiz {
-    padding-top: 56px;
-    padding-bottom: 48px;
+    padding: 60px 0;
   }
   .quiz__title {
-    font-size: 26px;
+    font-size: 24px;
   }
   .quiz__subtitle {
-    margin-top: 10px;
-    font-size: 17px;
+    margin-top: 16px;
+    font-size: 20px;
   }
   .quiz__card {
-    margin-top: 24px;
-    padding: 20px;
-    border-radius: 20px;
+    margin-top: 32px;
+    padding: 32px 24px;
+    border-radius: 16px;
   }
   .quiz__progress {
     gap: 8px;
   }
   .quiz__progress-bar {
-    height: 5px;
+    height: 4px;
   }
   .quiz__panel {
-    margin-top: 24px;
+    margin-top: 32px;
   }
   .quiz__step-label {
-    font-size: 15px;
+    font-size: 16px;
   }
   .quiz__question {
-    margin-top: 6px;
-    font-size: 19px;
+    margin-top: 8px;
+    font-size: 20px;
   }
   .quiz__options {
-    margin-top: 20px;
-    gap: 18px;
+    margin-top: 16px;
+    gap: 16px;
   }
   .quiz__option {
-    gap: 12px;
+    gap: 8px;
   }
   .quiz__option-mark {
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
   }
   .quiz__option-text {
-    font-size: 16px;
+    font-size: 18px;
+  }
+  .quiz__container {
+    padding: 0 20px;
   }
   .quiz__slider {
     margin-top: 32px;
@@ -1576,8 +1389,15 @@ body {
   }
   .quiz__slider-bubble {
     padding: 8px 16px;
-    border-radius: 12px;
-    font-size: 18px;
+    border-radius: 64px;
+    background: #F97316;
+    color: #FFF;
+    font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    top: -10px;
   }
   .quiz__slider-scale {
     margin-top: 18px;
@@ -1589,6 +1409,9 @@ body {
     color: #A99E94;
     font-size: 15px;
   }
+  .quiz__range {
+    height: 10px;
+  }
   .quiz__slider-dash {
     display: none;
   }
@@ -1596,39 +1419,229 @@ body {
     font-size: 20px;
   }
   .quiz__fields {
-    margin-top: 24px;
-    gap: 14px;
+    margin-top: 32px;
+    gap: 16px;
   }
   .quiz__field-icon {
-    left: 18px;
+    left: 16px;
   }
   .quiz__input {
     padding: 15px 18px 15px 50px;
-    font-size: 16px;
+    font-size: 15px;
   }
   .quiz__actions {
-    margin-top: 24px;
+    margin-top: 32px;
     gap: 12px;
   }
   .quiz__next, .quiz__back {
-    padding: 13px 22px;
+    padding: 8px 16px;
     font-size: 16px;
   }
   .quiz__submit {
     width: 100%;
-    padding: 15px 24px;
+    padding: 8px 16px;
     font-size: 16px;
   }
   .quiz__success-icon {
-    width: 52px;
-    height: 52px;
+    width: 32px;
+    height: 32px;
   }
   .quiz__success-title {
     margin-top: 18px;
-    font-size: 18px;
+    font-size: 20px;
   }
   .quiz__success-text {
     font-size: 16px;
+  }
+}
+/* ============ Прайс-лист для партнёров ============ */
+.price-list {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(100deg, #FDF5EF 0%, #FCEBDD 36%, #F9CDA4 72%, #F3A868 100%);
+}
+.price-list__container {
+  position: relative;
+  z-index: 2;
+  padding-top: 92px;
+  padding-bottom: 92px;
+}
+.price-list__content {
+  max-width: 440px;
+}
+.price-list__badge {
+  display: inline-block;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  color: #F97316;
+  font-family: "Gilroy", "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.price-list__title {
+  margin-top: 22px;
+  color: #2D2D3B;
+  font-family: "Gilroy", "Manrope", sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.18;
+}
+.price-list__subtitle {
+  margin-top: 16px;
+  max-width: 400px;
+  color: #8A8790;
+  font-family: "Gilroy", "Manrope", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.price-list__form {
+  margin-top: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.price-list__toggle {
+  display: flex;
+  padding: 5px;
+  border-radius: 999px;
+  background: #D9D4D1;
+}
+.price-list__toggle-input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.price-list__toggle-label {
+  flex: 1;
+  text-align: center;
+  padding: 12px 16px;
+  border-radius: 999px;
+  color: #7E7B84;
+  font-family: "Gilroy", "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.price-list__toggle-input:checked + .price-list__toggle-label {
+  background: #FFFFFF;
+  color: #2D2D3B;
+  box-shadow: 0 2px 8px rgba(45, 36, 32, 0.12);
+}
+.price-list__field {
+  position: relative;
+  display: block;
+}
+.price-list__field-icon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  display: inline-flex;
+  color: #A79C97;
+  pointer-events: none;
+}
+.price-list__input {
+  width: 100%;
+  padding: 17px 20px 17px 52px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.55);
+  color: #2D2D3B;
+  font-family: "Gilroy", "Manrope", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+}
+.price-list__input::placeholder {
+  color: #A79C97;
+}
+.price-list__input:focus {
+  outline: none;
+  border-color: #F97316;
+  background: #FFFFFF;
+}
+.price-list__submit {
+  margin-top: 4px;
+  padding: 17px 24px;
+  border: none;
+  border-radius: 12px;
+  background: #F97316;
+  color: #FFFFFF;
+  font-family: "Gilroy", "Manrope", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.price-list__submit:hover {
+  background: #E95F00;
+}
+.price-list__image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 47%;
+  max-width: 680px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 1024px) {
+  .price-list__image {
+    width: 44%;
+  }
+}
+@media (max-width: 768px) {
+  .price-list__title {
+    font-size: 30px;
+  }
+  .price-list__image {
+    width: 42%;
+    opacity: 0.9;
+  }
+}
+@media (max-width: 480px) {
+  .price-list {
+    background: linear-gradient(160deg, #FDECDD 0%, #F9C99C 52%, #F3A265 100%);
+  }
+  .price-list__image {
+    display: none;
+  }
+  .price-list__container {
+    padding-top: 42px;
+    padding-bottom: 46px;
+  }
+  .price-list__content {
+    max-width: none;
+  }
+  .price-list__title {
+    margin-top: 20px;
+    font-size: 30px;
+  }
+  .price-list__subtitle {
+    max-width: none;
+    font-size: 18px;
+  }
+  .price-list__form {
+    margin-top: 26px;
+    gap: 14px;
+  }
+  .price-list__toggle-label {
+    padding: 14px 12px;
+  }
+  .price-list__input {
+    padding: 18px 20px 18px 52px;
+  }
+  .price-list__submit {
+    padding: 18px 24px;
   }
 }
 
