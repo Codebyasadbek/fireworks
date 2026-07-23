@@ -1973,3 +1973,257 @@ body {
         }
     }
 }
+
+
+/* ============ Для уютных домашних праздников (маркетплейсы) ============ */
+.market {
+    background: $color-white;
+    padding-top: 90px;
+    padding-bottom: 90px;
+
+    &__head {
+        text-align: center;
+    }
+
+    &__title {
+        color: #2E3448;
+        font-family: $font-main;
+        font-size: 34px;
+        font-weight: 700;
+        line-height: 1.2;
+    }
+
+    &__subtitle {
+        margin-top: 12px;
+        color: #8A8790;
+        font-family: $font-main;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+    &__lead {
+        margin-top: 30px;
+        color: #8A8790;
+        font-family: $font-main;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1.4;
+    }
+
+    // Сетка карточек
+    &__grid {
+        margin-top: 42px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        padding: 28px;
+        background: $color-white;
+        border: 1px solid #EFEAE4;
+        border-radius: 20px;
+        box-shadow: 0 20px 50px rgba(45, 36, 32, 0.05);
+    }
+
+    // Область изображения товара
+    &__media {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+    }
+
+    &__img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        object-fit: contain;
+    }
+
+    &__name {
+        margin-top: 22px;
+        color: #2E3448;
+        font-family: $font-main;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.3;
+    }
+
+    // Рейтинг: звёзды, оценка, отзывы, лайк
+    &__rating {
+        margin-top: 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__stars {
+        display: inline-flex;
+        gap: 2px;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &__score {
+        color: #2E3448;
+        font-family: $font-main;
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    &__reviews {
+        color: #9A9299;
+        font-family: $font-main;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    &__like {
+        margin-left: auto;
+        display: inline-flex;
+        padding: 0;
+        border: none;
+        background: none;
+        cursor: pointer;
+
+        img {
+            width: 24px;
+            height: 24px;
+            opacity: 0.45;
+            transition: opacity 0.2s ease;
+        }
+
+        &:hover img {
+            opacity: 0.8;
+        }
+    }
+
+    // Кнопка перехода на маркетплейс
+    &__btn {
+        margin-top: 24px;
+        display: block;
+        text-align: center;
+        padding: 16px 24px;
+        border: 1.5px solid currentColor;
+        border-radius: 12px;
+        font-family: $font-main;
+        font-size: 18px;
+        font-weight: 700;
+        transition: background-color 0.2s ease, color 0.2s ease;
+
+        &--wb {
+            color: #CB11AB;
+
+            &:hover {
+                background: #CB11AB;
+                color: $color-white;
+            }
+        }
+
+        &--ozon {
+            color: #005BFF;
+
+            &:hover {
+                background: #005BFF;
+                color: $color-white;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .market {
+        padding-top: 64px;
+        padding-bottom: 64px;
+
+        &__title {
+            font-size: 28px;
+        }
+
+        &__media {
+            height: 240px;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .market {
+        padding-top: 40px;
+        padding-bottom: 44px;
+
+        // На мобильном заголовки слева
+        &__head {
+            text-align: left;
+        }
+
+        &__title {
+            font-size: 24px;
+        }
+
+        &__subtitle {
+            font-size: 16px;
+        }
+
+        &__lead {
+            margin-top: 22px;
+            font-size: 15px;
+        }
+
+        &__grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 26px;
+        }
+
+        &__card {
+            padding: 16px;
+        }
+
+        &__media {
+            height: 180px;
+        }
+
+        &__name {
+            margin-top: 18px;
+            font-size: 16px;
+        }
+
+        // Отзывы переносятся на вторую строку, лайк — справа сверху
+        &__rating {
+            flex-wrap: wrap;
+            row-gap: 4px;
+        }
+
+        &__stars img {
+            width: 18px;
+            height: 18px;
+        }
+
+        &__score {
+            font-size: 16px;
+        }
+
+        &__reviews {
+            order: 3;
+            flex-basis: 100%;
+            font-size: 14px;
+        }
+
+        &__like {
+            order: 2;
+        }
+
+        &__btn {
+            margin-top: 18px;
+            padding: 14px 20px;
+            font-size: 16px;
+        }
+    }
+}
