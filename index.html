@@ -68,6 +68,56 @@
                 </div>
             </div>
         </section>
+
+        <!-- ============ Квиз «Собери свой праздник» ============ -->
+        <section class="quiz">
+            <div class="container quiz__container">
+                <h2 class="quiz__title">Собери свой праздник</h2>
+                <p class="quiz__subtitle">Подберём идеальный набор для вашего события</p>
+
+                <div class="quiz__card">
+                    <!-- Индикатор прогресса (3 шага) -->
+                    <div class="quiz__progress">
+                        <span class="quiz__progress-bar quiz__progress-bar--active"></span>
+                        <span class="quiz__progress-bar"></span>
+                        <span class="quiz__progress-bar"></span>
+                    </div>
+
+                    <!-- Текущий шаг -->
+                    <div class="quiz__step">
+                        <p class="quiz__step-label">Шаг 1</p>
+                        <h3 class="quiz__question">Какое событие планируете?</h3>
+
+                        <div class="quiz__options">
+                            <label class="quiz__option">
+                                <input type="radio" name="event" class="quiz__radio">
+                                <span class="quiz__option-mark"></span>
+                                <span class="quiz__option-text">Новый год</span>
+                            </label>
+                            <label class="quiz__option">
+                                <input type="radio" name="event" class="quiz__radio">
+                                <span class="quiz__option-mark"></span>
+                                <span class="quiz__option-text">Свадьба</span>
+                            </label>
+                            <label class="quiz__option">
+                                <input type="radio" name="event" class="quiz__radio">
+                                <span class="quiz__option-mark"></span>
+                                <span class="quiz__option-text">День города</span>
+                            </label>
+                            <label class="quiz__option">
+                                <input type="radio" name="event" class="quiz__radio">
+                                <span class="quiz__option-mark"></span>
+                                <span class="quiz__option-text">Другое</span>
+                            </label>
+                        </div>
+
+                        <div class="quiz__actions">
+                            <button type="button" class="quiz__next">Следующее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script src="assets/js/script.js" defer></script>
