@@ -1974,59 +1974,63 @@ body {
     }
 }
 
-
 /* ============ Для уютных домашних праздников (маркетплейсы) ============ */
 .market {
     background: $color-white;
-    padding-top: 90px;
-    padding-bottom: 90px;
+    padding: 160px 0;
 
     &__head {
         text-align: center;
     }
 
     &__title {
-        color: #2E3448;
+        color: #2D2420;
+        text-align: center;
         font-family: $font-main;
-        font-size: 34px;
+        font-size: 36px;
+        font-style: normal;
         font-weight: 700;
-        line-height: 1.2;
+        line-height: normal;
     }
 
     &__subtitle {
-        margin-top: 12px;
-        color: #8A8790;
+        margin-top: 16px;
+        color: #8A7E78;
+        text-align: center;
         font-family: $font-main;
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 1.4;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
     }
 
     &__lead {
-        margin-top: 30px;
-        color: #8A8790;
-        font-family: $font-main;
-        font-size: 20px;
+        margin-top: 48px;
+        color: #726660;
+        font-family: $font-rounded;
+        font-size: 24px;
+        font-style: normal;
         font-weight: 500;
-        line-height: 1.4;
+        line-height: normal;
     }
 
     // Сетка карточек
     &__grid {
-        margin-top: 42px;
+        margin-top: 32px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 32px;
+        gap: 48px;
     }
 
     &__card {
         display: flex;
         flex-direction: column;
-        padding: 28px;
-        background: $color-white;
-        border: 1px solid #EFEAE4;
-        border-radius: 20px;
-        box-shadow: 0 20px 50px rgba(45, 36, 32, 0.05);
+        padding: 32px 24px;
+        border-radius: 16px;
+        border: 1px solid rgba(127, 138, 149, 0.10);
+        background: rgba(255, 255, 253, 0.40);
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(20px);
     }
 
     // Область изображения товара
@@ -2034,7 +2038,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 300px;
+        height: 221px;
     }
 
     &__img {
@@ -2045,44 +2049,49 @@ body {
     }
 
     &__name {
-        margin-top: 22px;
-        color: #2E3448;
+        margin-top: 24px;
+        color: #000;
         font-family: $font-main;
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 1.3;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
     }
 
     // Рейтинг: звёзды, оценка, отзывы, лайк
     &__rating {
-        margin-top: 16px;
+        margin-top: 32px;
         display: flex;
         align-items: center;
-        gap: 8px;
+        gap: 16px;
     }
 
     &__stars {
-        display: inline-flex;
-        gap: 2px;
+        display: flex;
+        align-items: center;
 
         img {
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
         }
     }
 
     &__score {
-        color: #2E3448;
-        font-family: $font-main;
-        font-size: 18px;
-        font-weight: 700;
+        color: #000;
+        font-family: $font-rounded;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
     }
 
     &__reviews {
-        color: #9A9299;
-        font-family: $font-main;
-        font-size: 16px;
-        font-weight: 500;
+        color: #000;
+        font-family: $font-rounded;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
     }
 
     &__like {
@@ -2096,7 +2105,6 @@ body {
         img {
             width: 24px;
             height: 24px;
-            opacity: 0.45;
             transition: opacity 0.2s ease;
         }
 
@@ -2107,19 +2115,22 @@ body {
 
     // Кнопка перехода на маркетплейс
     &__btn {
-        margin-top: 24px;
+        margin-top: 32px;
         display: block;
         text-align: center;
-        padding: 16px 24px;
+        padding: 16px;
         border: 1.5px solid currentColor;
-        border-radius: 12px;
+        border-radius: 16px;
         font-family: $font-main;
-        font-size: 18px;
+        font-size: 24px;
+        font-style: normal;
         font-weight: 700;
+        line-height: normal;
         transition: background-color 0.2s ease, color 0.2s ease;
 
         &--wb {
             color: #CB11AB;
+            border: 2px solid #CB11AB;
 
             &:hover {
                 background: #CB11AB;
@@ -2129,6 +2140,7 @@ body {
 
         &--ozon {
             color: #005BFF;
+            border: 2px solid #005BFF;
 
             &:hover {
                 background: #005BFF;
@@ -2155,43 +2167,53 @@ body {
 
 @media (max-width: 480px) {
     .market {
-        padding-top: 40px;
-        padding-bottom: 44px;
+        padding-top: 60px;
+        padding-bottom: 60px;
 
         // На мобильном заголовки слева
         &__head {
             text-align: left;
+            text-align: start;
+
+        }
+
+        .container {
+            padding: 0 20px;
         }
 
         &__title {
             font-size: 24px;
+            text-align: start;
+
         }
 
         &__subtitle {
-            font-size: 16px;
+            font-size: 20px;
+            text-align: start;
+            margin-top: 8px;
         }
 
         &__lead {
-            margin-top: 22px;
-            font-size: 15px;
+            margin-top: 16px;
+            font-size: 16px;
         }
 
         &__grid {
             grid-template-columns: 1fr;
-            gap: 20px;
-            margin-top: 26px;
+            gap: 32px;
+            margin-top: 32px;
         }
 
         &__card {
-            padding: 16px;
+            padding: 32px 24px;
         }
 
         &__media {
-            height: 180px;
+            height: 160px;
         }
 
         &__name {
-            margin-top: 18px;
+            margin-top: 16px;
             font-size: 16px;
         }
 
@@ -2199,11 +2221,12 @@ body {
         &__rating {
             flex-wrap: wrap;
             row-gap: 4px;
+            margin-top: 24px;
         }
 
         &__stars img {
-            width: 18px;
-            height: 18px;
+            width: 24px;
+            height: 24px;
         }
 
         &__score {
@@ -2213,7 +2236,7 @@ body {
         &__reviews {
             order: 3;
             flex-basis: 100%;
-            font-size: 14px;
+            font-size: 16px;
         }
 
         &__like {
@@ -2221,9 +2244,395 @@ body {
         }
 
         &__btn {
-            margin-top: 18px;
-            padding: 14px 20px;
+            margin-top: 24px;
+            padding: 16px;
             font-size: 16px;
+        }
+    }
+}
+
+/* ============ Подвал (Footer) ============ */
+.footer {
+    position: relative;
+    background: #949494;
+    color: #FFF;
+    padding-top: 64px;
+    padding-bottom: 64px;
+
+    &__container {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__main {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 48px;
+    }
+
+    // Левая колонка — информация
+    &__info {
+        flex: 1;
+        max-width: 500px;
+    }
+
+    &__title {
+        color: #FFF;
+        font-family: $font-main;
+        font-size: 40px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 41.6px;
+        letter-spacing: -0.8px;
+    }
+
+    &__subtitle {
+        margin-top: 9px;
+        color: #E3E2E1;
+        font-family: $font-main;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 24px;
+    }
+
+    &__contacts {
+        margin-top: 32px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__contact-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__contact-label {
+        color: rgba(255, 255, 255, 0.80);
+        font-family: $font-main;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 14.4px;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+    }
+
+    &__contact-value {
+        color: #E3E2E1;
+        font-family: $font-rounded;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+    }
+
+    &__note {
+        margin-top: 16px;
+        max-width: 384px;
+        color: #6F5850;
+        font-family: $font-rounded;
+        font-size: 13px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 14.4px;
+        letter-spacing: 0.6px;
+        text-transform: uppercase;
+    }
+
+    // Социальные сети
+    &__socials {
+        margin-top: 98px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    &__social-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.18);
+        backdrop-filter: blur(10px);
+        transition: transform 0.2s ease, background-color 0.2s ease;
+
+        img {
+            width: 28px;
+            height: 28px;
+            display: block;
+        }
+
+        &:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.30);
+        }
+    }
+
+    // Правая колонка — Форма (Карточка)
+    &__card {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 480px;
+        padding: 40px;
+        border-radius: 24px;
+        background: #EAEAEA;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    &__card-title {
+        color: #1A1A1A;
+        font-family: $font-main;
+        font-size: 26px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    &__form {
+        margin-top: 28px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__field {
+        position: relative;
+        display: block;
+    }
+
+    &__field-icon {
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        display: inline-flex;
+        color: #A0A0A0;
+        pointer-events: none;
+    }
+
+    &__input {
+        width: 100%;
+        height: 52px;
+        padding: 14px 20px 14px 54px;
+        border-radius: 9999px;
+        border: 1px solid transparent;
+        background: #FFF;
+        color: #2E3448;
+        font-family: $font-main;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+        &::placeholder {
+            color: #A0A0A0;
+            font-weight: 400;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: #F96515;
+            box-shadow: 0 0 0 3px rgba(249, 101, 21, 0.15);
+        }
+    }
+
+    &__submit {
+        margin-top: 8px;
+        width: 100%;
+        height: 54px;
+        border: none;
+        border-radius: 9999px;
+        background: #F96515;
+        color: #FFF;
+        font-family: $font-main;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.15s ease;
+
+        &:hover {
+            background: #E85A0D;
+        }
+    }
+
+    // Нижняя полоса
+    &__bottom {
+        margin-top: 60px;
+        padding-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    &__copyright {
+        color: rgba(255, 255, 255, 0.60);
+        font-family: $font-main;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    &__links {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+
+    &__link {
+        color: rgba(255, 255, 255, 0.60);
+        font-family: $font-main;
+        font-size: 14px;
+        font-weight: 400;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: #FFF;
+        }
+    }
+
+    &__status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #3E9C5A;
+    }
+
+    &__status-text {
+        color: rgba(255, 255, 255, 0.70);
+        font-family: $font-main;
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+
+// Мобильная адаптивность
+@media (max-width: 991px) {
+    .footer {
+        padding-top: 64px;
+        padding-bottom: 20px;
+
+        &__main {
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        &__info {
+            max-width: none;
+        }
+
+        &__title {
+            font-size: 32px;
+        }
+
+        &__subtitle {
+            font-size: 20px;
+        }
+
+        &__card {
+            max-width: none;
+            padding: 32px 20px;
+            border-radius: 16px;
+        }
+
+        &__card-title {
+            font-size: 20px;
+        }
+
+        &__bottom {
+            margin-top: 32px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+            border: none;
+            padding-top: 0;
+        }
+
+        &__copyright {
+            color: #E3E2E1;
+            font-size: 11px;
+        }
+
+        &__links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 28px;
+            width: 100%;
+        }
+
+        &__link {
+            color: #E3E2E1;
+            font-size: 11px;
+        }
+
+        &__status {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        &__title {
+            font-size: 32px;
+        }
+
+        &__subtitle {
+            font-size: 20px;
+            margin-top: 0;
+        }
+
+        .container {
+            padding: 0 20px;
+        }
+
+        &__note {
+            font-size: 11px;
+            line-height: 14.4px;
+            letter-spacing: 0.6px;
+        }
+
+        &__socials {
+            margin-top: 32px;
+        }
+
+        &__input {
+            border-radius: 16px;
+        }
+
+        &__contact-item {
+            margin-bottom: 16px;
+            gap: 5px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        &__social-btn {
+            width: 48px;
+            height: 48px;
+
+            img {
+                width: 24px;
+                height: 24px;
+            }
         }
     }
 }
