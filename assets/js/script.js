@@ -23,7 +23,68 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-  /* ---------- 2. Квиз «Собери свой праздник» ---------- */
+  /* ---------- 2. Простые формы (прайс-лист, футер) ---------- */
+  (function initContactForms() {
+    const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const forms = document.querySelectorAll('#priceForm, #footerForm');
+
+    forms.forEach(function (f) {
+      f.setAttribute('novalidate', '');
+
+      // Элемент для сообщений (создаём, если его нет)
+      const msg = document.createElement('p');
+      msg.className = 'form-message';
+      msg.hidden = true;
+      f.appendChild(msg);
+
+      function setMsg(text, ok) {
+        msg.textContent = text || '';
+        msg.hidden = !text;
+        msg.classList.toggle('form-message--ok', !!ok);
+      }
+
+      f.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const nameEl = f.querySelector('input[name="name"]');
+        const phoneEl = f.querySelector('input[name="phone"]');
+        const emailEl = f.querySelector('input[name="email"]');
+        let invalid = null;
+
+        [nameEl, phoneEl, emailEl].forEach(function (el) { if (el) el.classList.remove('is-invalid'); });
+
+        if (!nameEl || nameEl.value.trim().length < 2) { if (nameEl) nameEl.classList.add('is-invalid'); invalid = invalid || nameEl; }
+        if (!phoneEl || phoneEl.value.replace(/\D/g, '').length < 11) { if (phoneEl) phoneEl.classList.add('is-invalid'); invalid = invalid || phoneEl; }
+        if (emailEl && emailEl.value.trim() && !EMAIL_RE.test(emailEl.value.trim())) { emailEl.classList.add('is-invalid'); invalid = invalid || emailEl; }
+
+        if (invalid) {
+          setMsg('Проверьте, пожалуйста, заполненные поля.', false);
+          if (invalid.focus) invalid.focus();
+          return;
+        }
+
+        const btn = f.querySelector('button[type="submit"]');
+        if (btn) btn.disabled = true;
+        setMsg('Отправляем заявку…', true);
+
+        fetch(f.action, { method: 'POST', body: new FormData(f) })
+          .then(function (r) { return r.json().catch(function () { return { ok: r.ok }; }); })
+          .then(function (res) {
+            if (res && res.ok) {
+              f.reset();
+              setMsg('Спасибо! Заявка отправлена — мы свяжемся с вами в ближайшее время.', true);
+            } else {
+              setMsg((res && res.error) || 'Не удалось отправить заявку. Попробуйте позже.', false);
+            }
+          })
+          .catch(function () { setMsg('Ошибка сети. Попробуйте ещё раз.', false); })
+          .finally(function () { if (btn) btn.disabled = false; });
+      });
+    });
+  })();
+
+
+  /* ---------- 3. Квиз «Собери свой праздник» ---------- */
   const form = document.getElementById('quizForm');
   if (!form) return;
 

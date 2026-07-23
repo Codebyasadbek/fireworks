@@ -2636,3 +2636,25 @@ body {
         }
     }
 }
+
+
+/* ============ Сообщения форм (прайс-лист, футер) ============ */
+.form-message {
+    margin-top: 14px;
+    font-family: $font-main;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #E5484D;
+
+    &--ok {
+        color: #3E9C5A;
+    }
+}
+
+// Подсветка невалидных полей
+.price-list__input.is-invalid,
+.footer__input.is-invalid {
+    border-color: #E5484D;
+    box-shadow: 0 0 0 1px #E5484D;
+}
