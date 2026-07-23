@@ -271,76 +271,6 @@ body {
     }
 }
 
-// Квиз — макет под 375px, 1:1 с мобильным дизайном
-.quiz {
-    padding-top: 56px;
-    padding-bottom: 48px;
-
-    &__title {
-        font-size: 26px;
-    }
-
-    &__subtitle {
-        margin-top: 10px;
-        font-size: 17px;
-    }
-
-    &__card {
-        margin-top: 24px;
-        padding: 20px;
-        border-radius: 20px;
-    }
-
-    &__progress {
-        gap: 8px;
-    }
-
-    &__progress-bar {
-        height: 5px;
-    }
-
-    &__step {
-        margin-top: 24px;
-    }
-
-    &__step-label {
-        font-size: 15px;
-    }
-
-    &__question {
-        margin-top: 6px;
-        font-size: 19px;
-    }
-
-    &__options {
-        margin-top: 20px;
-        gap: 16px;
-    }
-
-    &__option {
-        gap: 12px;
-    }
-
-    &__option-mark {
-        width: 22px;
-        height: 22px;
-    }
-
-    &__option-text {
-        font-size: 16px;
-    }
-
-    &__actions {
-        margin-top: 24px;
-    }
-
-    &__next {
-        padding: 12px 24px;
-        font-size: 15px;
-    }
-}
-
-
 /* ============ Бегущая строка (Ticker) ============ */
 .ticker {
     position: absolute;
@@ -1213,219 +1143,60 @@ body {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ============ 8. Квиз «Собери свой праздник» ============ */
-.quiz {
-    padding-top: 80px;
-    padding-bottom: 80px;
-    background-color: $color-white;
-
-    &__title {
-        color: #2D2420;
-        font-family: $font-main;
-        font-size: 40px;
-        font-weight: 800;
-        line-height: 1.2;
-    }
-
-    &__subtitle {
-        margin-top: 12px;
-        color: #8A7E78;
-        font-family: $font-main;
-        font-size: 22px;
-        font-weight: 500;
-        line-height: 1.3;
-    }
-
-    // Карточка квиза
-    &__card {
-        margin-top: 40px;
-        padding: 40px;
-        background: $color-white;
-        border: 1px solid #EFEAE4;
-        border-radius: 24px;
-        box-shadow: 0 20px 50px rgba(45, 36, 32, 0.05);
-    }
-
-    // Полоса прогресса из трёх сегментов
-    &__progress {
-        display: flex;
-        gap: 12px;
-    }
-
-    &__progress-bar {
-        flex: 1;
-        height: 6px;
-        border-radius: 999px;
-        background: #E7E2DC;
-
-        &--active {
-            background: #1B2533;
-        }
-    }
-
-    &__step {
-        margin-top: 32px;
-    }
-
-    &__step-label {
-        color: #1B2533;
-        font-family: $font-main;
-        font-size: 18px;
-        font-weight: 600;
-        line-height: normal;
-    }
-
-    &__question {
-        margin-top: 8px;
-        color: #1B2533;
-        font-family: $font-main;
-        font-size: 28px;
-        font-weight: 700;
-        line-height: 1.2;
-    }
-
-    // Список вариантов ответа
-    &__options {
-        margin-top: 28px;
-        display: flex;
-        flex-direction: column;
-        gap: 22px;
-    }
-
-    &__option {
-        display: inline-flex;
-        align-items: center;
-        gap: 14px;
-        cursor: pointer;
-        width: fit-content;
-    }
-
-    // Прячем нативный кружок, рисуем свой
-    &__radio {
-        position: absolute;
-        width: 0;
-        height: 0;
-        opacity: 0;
-    }
-
-    &__option-mark {
-        position: relative;
-        flex: 0 0 auto;
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        border: 2px solid rgba(249, 115, 22, 0.45);
-        transition: border-color 0.15s ease;
-    }
-
-    &__radio:checked+&__option-mark {
-        border-color: #F97316;
-
-        &::after {
-            content: '';
-            position: absolute;
-            inset: 4px;
-            border-radius: 50%;
-            background: #F97316;
-        }
-    }
-
-    &__option-text {
-        color: #7C2D12;
-        font-family: $font-main;
-        font-size: 22px;
-        font-weight: 600;
-        line-height: normal;
-    }
-
-    // Кнопка перехода к следующему шагу
-    &__actions {
-        margin-top: 40px;
-        display: flex;
-        justify-content: flex-end;
-    }
-
-    &__next {
-        padding: 14px 28px;
-        border: none;
-        border-radius: 999px;
-        background: #F97316;
-        color: $color-white;
-        font-family: $font-main;
-        font-size: 18px;
-        font-weight: 600;
-        line-height: normal;
-        cursor: pointer;
-        transition: background-color 0.2s ease;
-
-        &:hover {
-            background: #E95F00;
-        }
-    }
-}
-
-
 /* ============ Квиз «Собери свой праздник» — интерактивный компонент ============
    Полное определение размещено в конце файла и переопределяет ранние стили. */
 .quiz {
-    padding-top: 80px;
-    padding-bottom: 80px;
-    background-color: $color-white;
+    padding-top: 160px;
+    padding-bottom: 180px;
+    background-color: #FFF;
+
+    &__container {
+        max-width: 980px;
+    }
 
     &__title {
         color: #2D2420;
         font-family: $font-main;
-        font-size: 40px;
-        font-weight: 800;
-        line-height: 1.2;
+        font-size: 36px;
+        font-weight: 700;
+        line-height: normal;
     }
 
     &__subtitle {
-        margin-top: 12px;
+        margin-top: 16px;
         color: #8A7E78;
         font-family: $font-main;
-        font-size: 22px;
-        font-weight: 500;
-        line-height: 1.3;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
     }
 
     // Карточка квиза
     &__card {
-        margin-top: 40px;
-        padding: 40px;
-        background: $color-white;
-        border: 1px solid #EFEAE4;
-        border-radius: 24px;
-        box-shadow: 0 20px 50px rgba(45, 36, 32, 0.05);
+        margin-top: 48px;
+        padding: 32px 24px;
+        border-radius: 16px;
+        border: 1px solid rgba(127, 138, 149, 0.10);
+        background: rgba(255, 255, 253, 0.40);
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(20px);
     }
 
     // Полоса прогресса из трёх сегментов
     &__progress {
         display: flex;
-        gap: 12px;
+        gap: 24px;
     }
 
     &__progress-bar {
         flex: 1;
-        height: 6px;
-        border-radius: 999px;
-        background: #E7E2DC;
+        height: 4px;
+        border-radius: 32px;
+        background: #D9D9D9;
 
         &--active {
-            background: #1B2533;
+            background: #2E3448;
         }
     }
 
@@ -1445,34 +1216,36 @@ body {
     }
 
     &__step-label {
-        color: #1B2533;
-        font-family: $font-main;
-        font-size: 18px;
-        font-weight: 600;
+        color: #2E3448;
+        font-family: $font-rounded;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
         line-height: normal;
     }
 
     &__question {
         margin-top: 8px;
-        color: #1B2533;
-        font-family: $font-main;
-        font-size: 28px;
-        font-weight: 700;
-        line-height: 1.2;
+        color: #2E3448;
+        font-family: $font-rounded;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
     }
 
     // Список вариантов ответа
     &__options {
-        margin-top: 28px;
+        margin-top: 32px;
         display: flex;
         flex-direction: column;
-        gap: 22px;
+        gap: 18px;
     }
 
     &__option {
         display: inline-flex;
         align-items: center;
-        gap: 14px;
+        gap: 16px;
         cursor: pointer;
         width: fit-content;
     }
@@ -1491,17 +1264,17 @@ body {
         width: 24px;
         height: 24px;
         border-radius: 50%;
-        border: 2px solid rgba(249, 115, 22, 0.45);
+        border: 2px solid #FE997F;
         transition: border-color 0.15s ease;
     }
 
-    &__radio:checked + &__option-mark {
-        border-color: #F97316;
+    &__radio:checked+&__option-mark {
+        border-color: #FE997F;
 
         &::after {
             content: '';
             position: absolute;
-            inset: 4px;
+            inset: 0px;
             border-radius: 50%;
             background: #F97316;
         }
@@ -1509,33 +1282,38 @@ body {
 
     &__option-text {
         color: #7C2D12;
-        font-family: $font-main;
-        font-size: 22px;
-        font-weight: 600;
+        font-family: $font-rounded;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
         line-height: normal;
     }
 
     // Ползунок бюджета (шаг 2)
     &__slider {
         position: relative;
-        margin-top: 44px;
+        margin-top: 65px;
         padding-top: 62px; // место для пузыря со значением
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     &__slider-bubble {
         position: absolute;
-        top: 0;
+        top: -39px;
         left: 50%;
         transform: translateX(-50%);
-        padding: 10px 20px;
-        border-radius: 14px;
+        padding: 20px 25px;
+        border-radius: 64px;
         background: #F97316;
-        color: $color-white;
-        font-family: $font-main;
-        font-size: 22px;
-        font-weight: 600;
-        line-height: 1;
-        white-space: nowrap;
+        color: #FFF;
+        text-align: center;
+        font-family: $font-rounded;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
 
         // Треугольник-указатель вниз
         &::after {
@@ -1545,7 +1323,7 @@ body {
             left: 50%;
             margin-top: -1px;
             transform: translateX(-50%);
-            border: 9px solid transparent;
+            border: 12px solid transparent;
             border-top-color: #F97316;
         }
     }
@@ -1554,17 +1332,17 @@ body {
         -webkit-appearance: none;
         appearance: none;
         width: 100%;
-        height: 10px;
-        border-radius: 999px;
-        background: #FBDDCB; // заполнение задаётся из JS градиентом
+        height: 20px;
+        border-radius: 10px;
+        background: #FFD0C4; // заполнение задаётся из JS градиентом
         outline: none;
         cursor: pointer;
 
         &::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 26px;
-            height: 26px;
+            width: 36px;
+            height: 36px;
             border-radius: 50%;
             background: #F97316;
             border: 5px solid $color-white;
@@ -1573,8 +1351,8 @@ body {
         }
 
         &::-moz-range-thumb {
-            width: 26px;
-            height: 26px;
+            width: 36px;
+            height: 36px;
             border: 5px solid $color-white;
             border-radius: 50%;
             background: #F97316;
@@ -1593,33 +1371,36 @@ body {
     }
 
     &__chip {
-        padding: 10px 22px;
-        border-radius: 12px;
-        border: 1px solid #E7DBD1;
-        background: $color-white;
-        color: #7C6A5F;
-        font-family: $font-main;
-        font-size: 18px;
-        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 40px;
+        border: 2px solid rgba(124, 45, 18, 0.50);
+        background: #FFF;
+        color: rgba(124, 45, 18, 0.50);
+        font-family: $font-rounded;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
         white-space: nowrap;
     }
 
     &__slider-dash {
         flex: 0 0 auto;
-        width: 22px;
+        width: 32px;
         height: 2px;
         border-radius: 2px;
-        background: #C9BEB4;
+        background: #8B8B8B;
     }
 
     // Форма контактов (шаг 4)
     &__form-title {
         text-align: center;
-        color: #1B2533;
-        font-family: $font-main;
-        font-size: 28px;
-        font-weight: 700;
-        line-height: 1.25;
+        color: #2E3448;
+        font-family: $font-rounded;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
     }
 
     &__fields {
@@ -1637,7 +1418,7 @@ body {
     &__field-icon {
         position: absolute;
         top: 50%;
-        left: 22px;
+        left: 20px;
         transform: translateY(-50%);
         display: inline-flex;
         color: #A99E94;
@@ -1646,29 +1427,27 @@ body {
 
     &__input {
         width: 100%;
-        padding: 18px 22px 18px 56px;
-        border: 1px solid transparent;
-        border-radius: 14px;
-        background: #EFEBE6;
-        color: #2D2420;
+        padding: 12px 16px;
+        color: #9E9E9E;
         font-family: $font-main;
-        font-size: 18px;
-        font-weight: 500;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding-left: 56px;
+
         transition: border-color 0.15s ease, background-color 0.15s ease;
+        border-radius: 16px;
+        border: 1px solid rgba(124, 45, 18, 0.05);
+        background: rgba(242, 242, 242, 0.80);
 
         &::placeholder {
-            color: #A99E94;
-        }
-
-        &:focus {
-            outline: none;
-            border-color: #F97316;
-            background: $color-white;
-        }
-
-        &.is-invalid {
-            border-color: #E5484D;
-            background: #FDF3F3;
+            color: #9E9E9E;
+            font-family: $font-main;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
         }
     }
 
@@ -1743,14 +1522,15 @@ body {
     // Основная кнопка (оранжевая)
     &__next,
     &__submit {
-        padding: 14px 28px;
+        padding: 8px 16px;
         border: none;
-        border-radius: 999px;
+        border-radius: 16px;
         background: #F97316;
-        color: $color-white;
+        color: #FFF;
         font-family: $font-main;
-        font-size: 18px;
-        font-weight: 600;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
         line-height: normal;
         cursor: pointer;
         transition: background-color 0.2s ease;
@@ -1766,22 +1546,21 @@ body {
     }
 
     &__submit {
-        padding: 16px 40px;
+        padding: 8px 16px;
     }
 
     // Кнопка «Назад» (светлая)
     &__back {
-        padding: 14px 28px;
-        border: 1px solid #EDE6E0;
-        border-radius: 999px;
-        background: $color-white;
+        padding: 8px 16px;
+        border-radius: 16px;
+        border: 1px solid rgba(124, 45, 18, 0.20);
+        background: rgba(255, 255, 255, 0.80);
         color: #7C2D12;
         font-family: $font-main;
-        font-size: 18px;
-        font-weight: 600;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700;
         line-height: normal;
-        cursor: pointer;
-        box-shadow: 0 4px 14px rgba(45, 36, 32, 0.05);
         transition: background-color 0.2s ease;
 
         &:hover {
@@ -1790,52 +1569,24 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    .quiz {
-        padding-top: 64px;
-        padding-bottom: 64px;
-
-        &__title {
-            font-size: 32px;
-        }
-
-        &__subtitle {
-            font-size: 19px;
-        }
-
-        &__card {
-            padding: 32px;
-            border-radius: 22px;
-        }
-
-        &__question {
-            font-size: 24px;
-        }
-
-        &__option-text {
-            font-size: 19px;
-        }
-    }
-}
 
 @media (max-width: 480px) {
     .quiz {
-        padding-top: 56px;
-        padding-bottom: 48px;
+        padding: 60px 0;
 
         &__title {
-            font-size: 26px;
+            font-size: 24px;
         }
 
         &__subtitle {
-            margin-top: 10px;
-            font-size: 17px;
+            margin-top: 16px;
+            font-size: 20px;
         }
 
         &__card {
-            margin-top: 24px;
-            padding: 20px;
-            border-radius: 20px;
+            margin-top: 32px;
+            padding: 32px 24px;
+            border-radius: 16px;
         }
 
         &__progress {
@@ -1843,38 +1594,42 @@ body {
         }
 
         &__progress-bar {
-            height: 5px;
+            height: 4px;
         }
 
         &__panel {
-            margin-top: 24px;
+            margin-top: 32px;
         }
 
         &__step-label {
-            font-size: 15px;
+            font-size: 16px;
         }
 
         &__question {
-            margin-top: 6px;
-            font-size: 19px;
+            margin-top: 8px;
+            font-size: 20px;
         }
 
         &__options {
-            margin-top: 20px;
-            gap: 18px;
+            margin-top: 16px;
+            gap: 16px;
         }
 
         &__option {
-            gap: 12px;
+            gap: 8px;
         }
 
         &__option-mark {
-            width: 22px;
-            height: 22px;
+            width: 20px;
+            height: 20px;
         }
 
         &__option-text {
-            font-size: 16px;
+            font-size: 18px;
+        }
+
+        &__container {
+            padding: 0 20px;
         }
 
         // Ползунок бюджета
@@ -1885,8 +1640,15 @@ body {
 
         &__slider-bubble {
             padding: 8px 16px;
-            border-radius: 12px;
-            font-size: 18px;
+            border-radius: 64px;
+            background: #F97316;
+            color: #FFF;
+            font-family: $font-rounded;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            top: -10px;
         }
 
         &__slider-scale {
@@ -1902,6 +1664,10 @@ body {
             font-size: 15px;
         }
 
+        &__range {
+            height: 10px;
+        }
+
         &__slider-dash {
             display: none;
         }
@@ -1912,46 +1678,46 @@ body {
         }
 
         &__fields {
-            margin-top: 24px;
-            gap: 14px;
+            margin-top: 32px;
+            gap: 16px;
         }
 
         &__field-icon {
-            left: 18px;
+            left: 16px;
         }
 
         &__input {
             padding: 15px 18px 15px 50px;
-            font-size: 16px;
+            font-size: 15px;
         }
 
         // Кнопки навигации
         &__actions {
-            margin-top: 24px;
+            margin-top: 32px;
             gap: 12px;
         }
 
         &__next,
         &__back {
-            padding: 13px 22px;
+            padding: 8px 16px;
             font-size: 16px;
         }
 
         &__submit {
             width: 100%;
-            padding: 15px 24px;
+            padding: 8px 16px;
             font-size: 16px;
         }
 
         // Экран успеха
         &__success-icon {
-            width: 52px;
-            height: 52px;
+            width: 32px;
+            height: 32px;
         }
 
         &__success-title {
             margin-top: 18px;
-            font-size: 18px;
+            font-size: 20px;
         }
 
         &__success-text {
