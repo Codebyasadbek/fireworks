@@ -514,9 +514,8 @@
 
                         <div class="quiz__slider">
                             <output class="quiz__slider-bubble" data-bubble>500 000</output>
-                            <input type="range" class="quiz__range" name="budget"
-                                min="5000" max="1000000" step="5000" value="500000" data-range
-                                aria-label="Примерный бюджет">
+                            <input type="range" class="quiz__range" name="budget" min="5000" max="1000000" step="5000"
+                                value="500000" data-range aria-label="Примерный бюджет">
                             <div class="quiz__slider-scale">
                                 <span class="quiz__chip">5 000 руб.</span>
                                 <span class="quiz__slider-dash"></span>
@@ -561,21 +560,43 @@
                         <div class="quiz__fields">
                             <label class="quiz__field">
                                 <span class="quiz__field-icon" aria-hidden="true">
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6.5 8-6.5S20 16 20 20"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <path d="M4 21V20C4 16.69 6.69 14 10 14H14C17.31 14 20 16.69 20 20V21"
+                                            stroke="#9E9E9E" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M12 11C9.79 11 8 9.21 8 7C8 4.79 9.79 3 12 3C14.21 3 16 4.79 16 7C16 9.21 14.21 11 12 11Z"
+                                            stroke="#9E9E9E" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
                                 </span>
-                                <input type="text" name="name" class="quiz__input" placeholder="Имя" autocomplete="name" required>
+                                <input type="text" name="name" class="quiz__input" placeholder="Имя" autocomplete="name"
+                                    required>
                             </label>
                             <label class="quiz__field">
                                 <span class="quiz__field-icon" aria-hidden="true">
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v2.6a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 3.9 2 2 0 0 1 4 1.7h2.6a2 2 0 0 1 2 1.7c.1.9.3 1.8.7 2.6a2 2 0 0 1-.5 2.1L7.6 9.4a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <path
+                                            d="M16.6289 13.891L17.0849 13.438L16.0259 12.374L15.5719 12.827L16.6289 13.891ZM18.6139 13.248L20.5249 14.287L21.2399 12.969L19.3299 11.931L18.6139 13.248ZM20.8919 16.351L19.4719 17.764L20.5289 18.827L21.9489 17.415L20.8919 16.351ZM18.6059 18.218C17.1559 18.354 13.4059 18.233 9.34393 14.195L8.28593 15.258C12.7179 19.665 16.9369 19.881 18.7459 19.712L18.6059 18.218ZM9.34393 14.195C5.47293 10.345 4.83093 7.10796 4.75093 5.70296L3.25293 5.78796C3.35293 7.55596 4.14793 11.144 8.28593 15.258L9.34393 14.195ZM10.7189 8.01496L11.0059 7.72896L9.94993 6.66596L9.66293 6.95096L10.7189 8.01496ZM11.2339 4.09396L9.97393 2.40996L8.77293 3.30996L10.0329 4.99296L11.2339 4.09396ZM5.73293 2.04296L4.16293 3.60296L5.22093 4.66696L6.78993 3.10696L5.73293 2.04296ZM10.1909 7.48296C9.66093 6.95096 9.66093 6.95096 9.66093 6.95296H9.65893L9.65593 6.95696C9.60841 7.00487 9.56586 7.05748 9.52893 7.11396C9.47493 7.19396 9.41593 7.29896 9.36593 7.43196C9.2442 7.77529 9.21388 8.14437 9.27793 8.50296C9.41193 9.36796 10.0079 10.511 11.5339 12.029L12.5919 10.965C11.1629 9.54496 10.8229 8.68096 10.7599 8.27296C10.7299 8.07896 10.7609 7.98296 10.7699 7.96096C10.7759 7.94763 10.7759 7.94563 10.7699 7.95496C10.761 7.96876 10.751 7.9818 10.7399 7.99396L10.7299 8.00396L10.7199 8.01296L10.1909 7.48296ZM11.5339 12.029C13.0609 13.547 14.2099 14.139 15.0759 14.271C15.5189 14.339 15.8759 14.285 16.1469 14.184C16.2987 14.1284 16.4406 14.0487 16.5669 13.948L16.6169 13.903L16.6239 13.897L16.6269 13.894L16.6279 13.892C16.6279 13.892 16.6289 13.891 16.0999 13.359C15.5699 12.827 15.5729 12.826 15.5729 12.826L15.5749 12.824L15.5769 12.822L15.5829 12.817L15.5929 12.807L15.6309 12.777C15.6403 12.771 15.6379 12.7716 15.6239 12.779C15.5989 12.788 15.5009 12.819 15.3039 12.789C14.8899 12.725 14.0199 12.385 12.5919 10.965L11.5339 12.029ZM9.97393 2.40896C8.95393 1.04896 6.94993 0.83296 5.73293 2.04296L6.78993 3.10696C7.32193 2.57796 8.26593 2.63296 8.77293 3.30996L9.97393 2.40896ZM4.75193 5.70396C4.73193 5.35796 4.89093 4.99596 5.22093 4.66796L4.16193 3.60396C3.62493 4.13796 3.20193 4.89396 3.25293 5.78796L4.75193 5.70396ZM19.4719 17.764C19.1979 18.038 18.9019 18.192 18.6069 18.219L18.7459 19.712C19.4809 19.643 20.0819 19.273 20.5299 18.828L19.4719 17.764ZM11.0059 7.72896C11.9909 6.74996 12.0639 5.20296 11.2349 4.09496L10.0339 4.99396C10.4369 5.53296 10.3769 6.23996 9.94893 6.66696L11.0059 7.72896ZM20.5259 14.288C21.3429 14.732 21.4699 15.778 20.8929 16.352L21.9509 17.415C23.2909 16.082 22.8779 13.859 21.2409 12.97L20.5259 14.288ZM17.0849 13.439C17.4689 13.057 18.0869 12.963 18.6149 13.249L19.3309 11.932C18.2469 11.342 16.9029 11.505 16.0269 12.375L17.0849 13.439Z"
+                                            fill="#9E9E9E" />
+                                    </svg>
                                 </span>
-                                <input type="tel" name="phone" class="quiz__input" placeholder="Телефон" autocomplete="tel" required>
+                                <input type="tel" name="phone" class="quiz__input" placeholder="Телефон"
+                                    autocomplete="tel" required>
                             </label>
                             <label class="quiz__field">
                                 <span class="quiz__field-icon" aria-hidden="true">
-                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 18"
+                                        fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M22.425 2.526L12.9555 10.368C12.6864 10.5909 12.3479 10.7129 11.9985 10.7129C11.6491 10.7129 11.3106 10.5909 11.0415 10.368L1.5765 2.526C1.52571 2.67887 1.49988 2.83892 1.5 3V15C1.5 15.3978 1.65804 15.7794 1.93934 16.0607C2.22064 16.342 2.60218 16.5 3 16.5H21C21.3978 16.5 21.7794 16.342 22.0607 16.0607C22.342 15.7794 22.5 15.3978 22.5 15V3C22.5006 2.839 22.4753 2.67895 22.425 2.526ZM3 0H21C21.7956 0 22.5587 0.31607 23.1213 0.87868C23.6839 1.44129 24 2.20435 24 3V15C24 15.7956 23.6839 16.5587 23.1213 17.1213C22.5587 17.6839 21.7956 18 21 18H3C2.20435 18 1.44129 17.6839 0.87868 17.1213C0.316071 16.5587 0 15.7956 0 15V3C0 2.20435 0.316071 1.44129 0.87868 0.87868C1.44129 0.31607 2.20435 0 3 0ZM2.685 1.5L11.049 8.4045C11.3169 8.62576 11.6533 8.74716 12.0007 8.74798C12.3481 8.7488 12.6851 8.62899 12.954 8.409L21.402 1.5H2.685Z"
+                                            fill="#9E9E9E" />
+                                    </svg>
                                 </span>
-                                <input type="email" name="email" class="quiz__input" placeholder="Email" autocomplete="email" required>
+                                <input type="email" name="email" class="quiz__input" placeholder="Email"
+                                    autocomplete="email" required>
                             </label>
                         </div>
 
@@ -589,10 +610,14 @@
                     <!-- Экран успешной отправки -->
                     <div class="quiz__panel quiz__panel--success" data-step="5">
                         <span class="quiz__success-icon" aria-hidden="true">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="m5 12.5 4.5 4.5L19 7.5" />
+                            </svg>
                         </span>
                         <h3 class="quiz__success-title">Ваша заявка уже летит к нам</h3>
-                        <p class="quiz__success-text">Мы уже подбираем для вас идеальный праздничный набор. Наш специалист свяжется с вами в течение 15 минут, чтобы всё обсудить.</p>
+                        <p class="quiz__success-text">Мы уже подбираем для вас идеальный праздничный набор. Наш
+                            специалист свяжется с вами в течение 15 минут, чтобы всё обсудить.</p>
                     </div>
                 </form>
             </div>
