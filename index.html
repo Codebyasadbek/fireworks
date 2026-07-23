@@ -460,52 +460,141 @@
             </div>
         </section>
 
-           <section class="quiz">
+        <!-- ============ Квиз «Собери свой праздник» ============ -->
+        <section class="quiz" id="quiz">
             <div class="container quiz__container">
                 <h2 class="quiz__title">Собери свой праздник</h2>
                 <p class="quiz__subtitle">Подберём идеальный набор для вашего события</p>
 
-                <div class="quiz__card">
-                    <!-- Индикатор прогресса (3 шага) -->
-                    <div class="quiz__progress">
+                <form class="quiz__card" id="quizForm" action="sendmail.php" method="post" novalidate>
+                    <!-- Индикатор прогресса (шаги 1–3) -->
+                    <div class="quiz__progress" data-progress>
                         <span class="quiz__progress-bar quiz__progress-bar--active"></span>
                         <span class="quiz__progress-bar"></span>
                         <span class="quiz__progress-bar"></span>
                     </div>
 
-                    <!-- Текущий шаг -->
-                    <div class="quiz__step">
+                    <!-- Шаг 1: тип события -->
+                    <div class="quiz__panel is-active" data-step="1">
                         <p class="quiz__step-label">Шаг 1</p>
                         <h3 class="quiz__question">Какое событие планируете?</h3>
 
                         <div class="quiz__options">
                             <label class="quiz__option">
-                                <input type="radio" name="event" class="quiz__radio">
+                                <input type="radio" name="event" value="Новый год" class="quiz__radio">
                                 <span class="quiz__option-mark"></span>
                                 <span class="quiz__option-text">Новый год</span>
                             </label>
                             <label class="quiz__option">
-                                <input type="radio" name="event" class="quiz__radio">
+                                <input type="radio" name="event" value="Свадьба" class="quiz__radio">
                                 <span class="quiz__option-mark"></span>
                                 <span class="quiz__option-text">Свадьба</span>
                             </label>
                             <label class="quiz__option">
-                                <input type="radio" name="event" class="quiz__radio">
+                                <input type="radio" name="event" value="День города" class="quiz__radio">
                                 <span class="quiz__option-mark"></span>
                                 <span class="quiz__option-text">День города</span>
                             </label>
                             <label class="quiz__option">
-                                <input type="radio" name="event" class="quiz__radio">
+                                <input type="radio" name="event" value="Другое" class="quiz__radio">
                                 <span class="quiz__option-mark"></span>
                                 <span class="quiz__option-text">Другое</span>
                             </label>
                         </div>
 
-                        <div class="quiz__actions">
-                            <button type="button" class="quiz__next">Следующее</button>
+                        <div class="quiz__actions quiz__actions--end">
+                            <button type="button" class="quiz__next" data-next>Следующее</button>
                         </div>
                     </div>
-                </div>
+
+                    <!-- Шаг 2: бюджет -->
+                    <div class="quiz__panel" data-step="2">
+                        <p class="quiz__step-label">Шаг 2</p>
+                        <h3 class="quiz__question">Примерный бюджет?</h3>
+
+                        <div class="quiz__slider">
+                            <output class="quiz__slider-bubble" data-bubble>500 000</output>
+                            <input type="range" class="quiz__range" name="budget"
+                                min="5000" max="1000000" step="5000" value="500000" data-range
+                                aria-label="Примерный бюджет">
+                            <div class="quiz__slider-scale">
+                                <span class="quiz__chip">5 000 руб.</span>
+                                <span class="quiz__slider-dash"></span>
+                                <span class="quiz__chip">1 000 000 руб.</span>
+                            </div>
+                        </div>
+
+                        <div class="quiz__actions">
+                            <button type="button" class="quiz__back" data-back>Назад</button>
+                            <button type="button" class="quiz__next" data-next>Следующее</button>
+                        </div>
+                    </div>
+
+                    <!-- Шаг 3: нужна ли помощь -->
+                    <div class="quiz__panel" data-step="3">
+                        <p class="quiz__step-label">Шаг 3</p>
+                        <h3 class="quiz__question">Нужна помощь в подборе?</h3>
+
+                        <div class="quiz__options">
+                            <label class="quiz__option">
+                                <input type="radio" name="help" value="Да" class="quiz__radio">
+                                <span class="quiz__option-mark"></span>
+                                <span class="quiz__option-text">Да</span>
+                            </label>
+                            <label class="quiz__option">
+                                <input type="radio" name="help" value="Нет, я знаю что нужно" class="quiz__radio">
+                                <span class="quiz__option-mark"></span>
+                                <span class="quiz__option-text">Нет, я знаю что&nbsp;нужно</span>
+                            </label>
+                        </div>
+
+                        <div class="quiz__actions">
+                            <button type="button" class="quiz__back" data-back>Назад</button>
+                            <button type="button" class="quiz__next" data-next>Следующее</button>
+                        </div>
+                    </div>
+
+                    <!-- Шаг 4: контактные данные -->
+                    <div class="quiz__panel quiz__panel--form" data-step="4">
+                        <h3 class="quiz__form-title">Отлично! Мы подготовили для вас идеи.</h3>
+
+                        <div class="quiz__fields">
+                            <label class="quiz__field">
+                                <span class="quiz__field-icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6.5 8-6.5S20 16 20 20"/></svg>
+                                </span>
+                                <input type="text" name="name" class="quiz__input" placeholder="Имя" autocomplete="name" required>
+                            </label>
+                            <label class="quiz__field">
+                                <span class="quiz__field-icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v2.6a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 3.9 2 2 0 0 1 4 1.7h2.6a2 2 0 0 1 2 1.7c.1.9.3 1.8.7 2.6a2 2 0 0 1-.5 2.1L7.6 9.4a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg>
+                                </span>
+                                <input type="tel" name="phone" class="quiz__input" placeholder="Телефон" autocomplete="tel" required>
+                            </label>
+                            <label class="quiz__field">
+                                <span class="quiz__field-icon" aria-hidden="true">
+                                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 7 8.5 6 8.5-6"/></svg>
+                                </span>
+                                <input type="email" name="email" class="quiz__input" placeholder="Email" autocomplete="email" required>
+                            </label>
+                        </div>
+
+                        <p class="quiz__message" data-message hidden></p>
+
+                        <div class="quiz__actions quiz__actions--center">
+                            <button type="submit" class="quiz__submit" data-submit>Получить точный расчёт</button>
+                        </div>
+                    </div>
+
+                    <!-- Экран успешной отправки -->
+                    <div class="quiz__panel quiz__panel--success" data-step="5">
+                        <span class="quiz__success-icon" aria-hidden="true">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>
+                        </span>
+                        <h3 class="quiz__success-title">Ваша заявка уже летит к нам</h3>
+                        <p class="quiz__success-text">Мы уже подбираем для вас идеальный праздничный набор. Наш специалист свяжется с вами в течение 15 минут, чтобы всё обсудить.</p>
+                    </div>
+                </form>
             </div>
         </section>
     </div>
