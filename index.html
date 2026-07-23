@@ -9,10 +9,20 @@
     <meta name="description"
         content="Оптовая пиротехника от компании «Повелитель огня». Помогаем создавать волшебные моменты для тысяч людей по всей России.">
 
-    <!-- Резервный шрифт (Manrope) на случай отсутствия Gilroy -->
+    <!-- Фирменный шрифт Gilroy (CDN) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@qpokychuk/gilroy@1.0.2/index.css">
+
+    <!-- SF Pro Rounded шрифт (CDN) -->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sf-pro-rounded-2">
+
+    <!-- SF Pro Display / Text шрифт (CDN) -->
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/sf-pro-display">
+
+    <!-- Резервный шрифт (Manrope) va Montserrat shrifitlari (Google Fonts) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Стили проекта -->
@@ -20,55 +30,438 @@
 </head>
 
 <body>
+    <div class="wrapper">
+        <!-- ============ Шапка сайта ============ -->
+        <header class="header">
+            <div class="header_container">
+                <a href="#" class="logo" aria-label="Повелитель огня — на главную">
+                    <img src="assets/images/logo.svg" alt="" class="logo__icon" width="177" height="120">
+                </a>
+            </div>
+        </header>
 
-    <!-- ============ Шапка сайта ============ -->
-    <header class="header">
-        <div class="header_container">
-            <a href="#" class="logo" aria-label="Повелитель огня — на главную">
-                <img src="assets/images/logo.svg" alt="" class="logo__icon" width="177" height="120">
-            </a>
-        </div>
-    </header>
+        <main>
+            <!-- ============ Первый экран (Hero) ============ -->
+            <section class="hero">
+                <!-- Фоновое изображение: WebP + PNG, отдельная версия для мобильных -->
+                <picture class="hero__bg">
+                    <source media="(max-width: 767px)" srcset="assets/images/hero_bg-mobile.webp" type="image/webp">
+                    <source srcset="assets/images/hero_bg.webp" type="image/webp">
+                    <img src="assets/images/hero_bg.png" alt="" class="hero__bg-img" fetchpriority="high">
+                </picture>
 
-    <main>
-        <!-- ============ Первый экран (Hero) ============ -->
-        <section class="hero">
-            <!-- Фоновое изображение: WebP + PNG, отдельная версия для мобильных -->
-            <picture class="hero__bg">
-                <source media="(max-width: 767px)" srcset="assets/images/hero_bg-mobile.webp" type="image/webp">
-                <source media="(max-width: 767px)" srcset="assets/images/hero_bg-mobile.png">
-                <source srcset="assets/images/hero_bg.webp" type="image/webp">
-                <img src="assets/images/hero_bg.png" alt="" class="hero__bg-img" fetchpriority="high">
-            </picture>
+                <!-- Осветляющая подложка под текстом -->
+                <div class="hero__overlay"></div>
 
-            <!-- Осветляющая подложка под текстом -->
-            <div class="hero__overlay"></div>
+                <!-- Контент первого экрана -->
+                <div class="container hero__container">
+                    <p class="hero__badge">
+                        <span>Готовимся к Новому году 2027</span>
+                        <img src="assets/images/tree.svg" alt="" class="hero__badge-icon" width="24" height="24">
+                    </p>
 
-            <!-- Контент первого экрана -->
-            <div class="container hero__container">
-                <p class="hero__badge">
-                    <span>Готовимся к Новому году 2027</span>
-                    <img src="assets/images/tree.svg" alt="" class="hero__badge-icon" width="24" height="24">
+                    <h1 class="hero__title">
+                        Подарите праздник,<br>
+                        который запомнится<br>
+                        навсегда
+                    </h1>
+
+                    <p class="hero__text">
+                        Оптовая пиротехника от компании «Повелитель огня».
+                        Мы помогаем создавать волшебные моменты для тысяч людей по всей России.
+                    </p>
+
+                    <div class="hero__actions">
+                        <a href="#" class="btn btn--primary">Стать партнёром</a>
+                        <a href="#" class="btn btn--secondary">Купить в розницу</a>
+                    </div>
+
+                    <!-- ============ Блок партнёров (только для Mobile) ============ -->
+
+                </div>
+
+                <!-- ============ Бегущая строка бренд-партнёров ============ -->
+                <div class="ticker" aria-label="Бренды партнёров">
+                    <div class="ticker__track">
+                        <div class="ticker__group">
+                            <span class="ticker__item">SLK</span>
+                            <span class="ticker__star"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path
+                                        d="M8 0C8.15295 4.35335 11.6466 7.84705 16 8C11.6466 8.15295 8.15295 11.6466 8 16C7.84705 11.6466 4.35335 8.15295 0 8C4.35335 7.84705 7.84705 4.35335 8 0Z"
+                                        fill="#F97316" />
+                                </svg></span>
+                            <span class="ticker__item">MAXSEM</span>
+                            <span class="ticker__star"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path
+                                        d="M8 0C8.15295 4.35335 11.6466 7.84705 16 8C11.6466 8.15295 8.15295 11.6466 8 16C7.84705 11.6466 4.35335 8.15295 0 8C4.35335 7.84705 7.84705 4.35335 8 0Z"
+                                        fill="#F97316" />
+                                </svg></span>
+                            <span class="ticker__item">РУССКИЙ ФЕЙЕРВЕРК</span>
+                            <span class="ticker__star"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path
+                                        d="M8 0C8.15295 4.35335 11.6466 7.84705 16 8C11.6466 8.15295 8.15295 11.6466 8 16C7.84705 11.6466 4.35335 8.15295 0 8C4.35335 7.84705 7.84705 4.35335 8 0Z"
+                                        fill="#F97316" />
+                                </svg></span>
+                            <span class="ticker__item">ФЕЙЕРВЕРК МАСТЕР</span>
+                            <span class="ticker__star"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path
+                                        d="M8 0C8.15295 4.35335 11.6466 7.84705 16 8C11.6466 8.15295 8.15295 11.6466 8 16C7.84705 11.6466 4.35335 8.15295 0 8C4.35335 7.84705 7.84705 4.35335 8 0Z"
+                                        fill="#F97316" />
+                                </svg></span>
+                            <span class="ticker__item">SLK</span>
+                            <span class="ticker__star"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path
+                                        d="M8 0C8.15295 4.35335 11.6466 7.84705 16 8C11.6466 8.15295 8.15295 11.6466 8 16C7.84705 11.6466 4.35335 8.15295 0 8C4.35335 7.84705 7.84705 4.35335 8 0Z"
+                                        fill="#F97316" />
+                                </svg></span>
+                            <span class="ticker__item">MAXSEM</span>
+                            <span class="ticker__star"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path
+                                        d="M8 0C8.15295 4.35335 11.6466 7.84705 16 8C11.6466 8.15295 8.15295 11.6466 8 16C7.84705 11.6466 4.35335 8.15295 0 8C4.35335 7.84705 7.84705 4.35335 8 0Z"
+                                        fill="#F97316" />
+                                </svg></span>
+                            <span class="ticker__item">РУССКИЙ ФЕЙЕРВЕРК</span>
+                            <span class="ticker__star"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path
+                                        d="M8 0C8.15295 4.35335 11.6466 7.84705 16 8C11.6466 8.15295 8.15295 11.6466 8 16C7.84705 11.6466 4.35335 8.15295 0 8C4.35335 7.84705 7.84705 4.35335 8 0Z"
+                                        fill="#F97316" />
+                                </svg></span>
+                            <span class="ticker__item">ФЕЙЕРВЕРК МАСТЕР</span>
+                            <span class="ticker__star"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path
+                                        d="M8 0C8.15295 4.35335 11.6466 7.84705 16 8C11.6466 8.15295 8.15295 11.6466 8 16C7.84705 11.6466 4.35335 8.15295 0 8C4.35335 7.84705 7.84705 4.35335 8 0Z"
+                                        fill="#F97316" />
+                                </svg></span>
+                        </div>
+                        <div class="ticker__group" aria-hidden="true">
+                            <span class="ticker__item">SLK</span>
+                            <span class="ticker__star"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path
+                                        d="M8 0C8.15295 4.35335 11.6466 7.84705 16 8C11.6466 8.15295 8.15295 11.6466 8 16C7.84705 11.6466 4.35335 8.15295 0 8C4.35335 7.84705 7.84705 4.35335 8 0Z"
+                                        fill="#F97316" />
+                                </svg></span>
+                            <span class="ticker__item">MAXSEM</span>
+                            <span class="ticker__star"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path
+                                        d="M8 0C8.15295 4.35335 11.6466 7.84705 16 8C11.6466 8.15295 8.15295 11.6466 8 16C7.84705 11.6466 4.35335 8.15295 0 8C4.35335 7.84705 7.84705 4.35335 8 0Z"
+                                        fill="#F97316" />
+                                </svg></span>
+                            <span class="ticker__item">РУССКИЙ ФЕЙЕРВЕРК</span>
+                            <span class="ticker__star"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path
+                                        d="M8 0C8.15295 4.35335 11.6466 7.84705 16 8C11.6466 8.15295 8.15295 11.6466 8 16C7.84705 11.6466 4.35335 8.15295 0 8C4.35335 7.84705 7.84705 4.35335 8 0Z"
+                                        fill="#F97316" />
+                                </svg></span>
+                            <span class="ticker__item">ФЕЙЕРВЕРК МАСТЕР</span>
+                            <span class="ticker__star"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path
+                                        d="M8 0C8.15295 4.35335 11.6466 7.84705 16 8C11.6466 8.15295 8.15295 11.6466 8 16C7.84705 11.6466 4.35335 8.15295 0 8C4.35335 7.84705 7.84705 4.35335 8 0Z"
+                                        fill="#F97316" />
+                                </svg></span>
+                            <span class="ticker__item">SLK</span>
+                            <span class="ticker__star"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path
+                                        d="M8 0C8.15295 4.35335 11.6466 7.84705 16 8C11.6466 8.15295 8.15295 11.6466 8 16C7.84705 11.6466 4.35335 8.15295 0 8C4.35335 7.84705 7.84705 4.35335 8 0Z"
+                                        fill="#F97316" />
+                                </svg></span>
+                            <span class="ticker__item">MAXSEM</span>
+                            <span class="ticker__star"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path
+                                        d="M8 0C8.15295 4.35335 11.6466 7.84705 16 8C11.6466 8.15295 8.15295 11.6466 8 16C7.84705 11.6466 4.35335 8.15295 0 8C4.35335 7.84705 7.84705 4.35335 8 0Z"
+                                        fill="#F97316" />
+                                </svg></span>
+                            <span class="ticker__item">РУССКИЙ ФЕЙЕРВЕРК</span>
+                            <span class="ticker__star"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path
+                                        d="M8 0C8.15295 4.35335 11.6466 7.84705 16 8C11.6466 8.15295 8.15295 11.6466 8 16C7.84705 11.6466 4.35335 8.15295 0 8C4.35335 7.84705 7.84705 4.35335 8 0Z"
+                                        fill="#F97316" />
+                                </svg></span>
+                            <span class="ticker__item">ФЕЙЕРВЕРК МАСТЕР</span>
+                            <span class="ticker__star"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    viewBox="0 0 16 16" fill="none">
+                                    <path
+                                        d="M8 0C8.15295 4.35335 11.6466 7.84705 16 8C11.6466 8.15295 8.15295 11.6466 8 16C7.84705 11.6466 4.35335 8.15295 0 8C4.35335 7.84705 7.84705 4.35335 8 0Z"
+                                        fill="#F97316" />
+                                </svg></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="hero__partners-mobile ">
+                <div class="hero__partners-header">
+                    <img src="assets/images/badge-check.svg" alt="" class="hero__partners-icon" width="36" height="36">
+                    <h3 class="hero__partners-title">
+                        Официальный партнёр<br>крупнейших импортеров
+                    </h3>
+                </div>
+                <div class="hero__partners-grid">
+                    <div class="hero__partner-pill">Русский фейерверк</div>
+                    <div class="hero__partner-pill">SLK</div>
+                    <div class="hero__partner-pill">Maxsem</div>
+                    <div class="hero__partner-pill">Фейерверк мастер</div>
+                </div>
+            </div>
+        </main>
+        <section class="comfort-magic">
+            <div class="container">
+                <h2 class="comfort-magic_title">
+                    Создаём уют и волшебство
+                </h2>
+                <p class="comfort-magic_description">
+                    Более 500 наименований — от бенгальских огней до грандиозных салютов
                 </p>
 
-                <h1 class="hero__title">
-                    Подарите праздник,<br>
-                    который запомнится<br>
-                    навсегда
-                </h1>
-
-                <p class="hero__text">
-                    Оптовая пиротехника от компании «Повелитель огня».
-                    Мы помогаем создавать волшебные моменты для тысяч людей по всей России.
-                </p>
-
-                <div class="hero__actions">
-                    <a href="#" class="btn btn--primary">Стать партнёром</a>
-                    <a href="#" class="btn btn--secondary">Купить в розницу</a>
+                <div class="comfort-magic__blocks">
+                    <div class="comfort-magic__item">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <path
+                                    d="M12 12.0001L20.073 7.37514M12 12.0001L3.926 7.37514M12 12.0001V21.2501M12 21.2501C11.4415 21.2505 10.8927 21.1046 10.408 20.8271L5.092 17.7811C4.107 17.2171 3.5 16.1751 3.5 15.0451V8.95514C3.49985 8.40008 3.64685 7.8549 3.926 7.37514C4.202 6.90314 4.599 6.50214 5.092 6.22014L10.408 3.17314C10.8926 2.89524 11.4414 2.74902 12 2.74902C12.5586 2.74902 13.1074 2.89524 13.592 3.17314L18.908 6.21914C19.3911 6.49552 19.7929 6.89422 20.073 7.37514M20.073 7.37514C20.348 7.84714 20.5 8.39114 20.5 8.95614V15.0461C20.4997 15.6021 20.3522 16.1481 20.0726 16.6286C19.793 17.1092 19.3912 17.5072 18.908 17.7821L13.592 20.8281C13.1072 21.1053 12.5584 21.2508 12 21.2501"
+                                    stroke="black" stroke-width="1.5" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="item_title">Батареи салютов </div>
+                        <p class="item_description">Главное украшение <br> праздника</p>
+                    </div>
+                    <div class="comfort-magic__item">
+                        <div class="icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <rect width="24" height="24" fill="url(#pattern0_26_266)" />
+                                <defs>
+                                    <pattern id="pattern0_26_266" patternContentUnits="objectBoundingBox" width="1"
+                                        height="1">
+                                        <use xlink:href="#image0_26_266" transform="scale(0.0078125)" />
+                                    </pattern>
+                                    <image id="image0_26_266" width="128" height="128" preserveAspectRatio="none"
+                                        xlink:href="data:image/png;base64,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" />
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="item_title">Римские свечи </div>
+                        <p class="item_description">Элегантная классика</p>
+                    </div>
+                    <div class="comfort-magic__item">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <path
+                                    d="M3 12C7.5 12 12 7.5 12 3C12 7.5 16.5 12 21 12C16.5 12 12 16.5 12 21C12 16.5 7.5 12 3 12ZM2 19.5C2.833 19.5 4.5 17.833 4.5 17C4.5 17.833 6.167 19.5 7 19.5C6.167 19.5 4.5 21.167 4.5 22C4.5 21.167 2.833 19.5 2 19.5ZM16 5C17 5 19 3 19 2C19 3 21 5 22 5C21 5 19 7 19 8C19 7 17 5 16 5Z"
+                                    stroke="black" stroke-width="1.5" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="item_title">Бенгальские огни </div>
+                        <p class="item_description">Тепло и уют в каждом доме</p>
+                    </div>
+                    <div class="comfort-magic__item">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="31" viewBox="0 0 26 31"
+                                fill="none">
+                                <ellipse cx="4.15943" cy="2.28246" rx="1.02857" ry="0.978261" fill="black" />
+                                <ellipse cx="18.5593" cy="0.978261" rx="1.02857" ry="0.978261" fill="black" />
+                                <ellipse cx="4.50212" cy="11.7396" rx="0.685715" ry="0.652174" fill="black" />
+                                <ellipse cx="24.3879" cy="3.91292" rx="0.685715" ry="0.652174" fill="black" />
+                                <ellipse cx="10.6735" cy="3.26057" rx="0.685715" ry="0.652174" fill="black" />
+                                <path
+                                    d="M5.30663 28.0731L9.075 17.6256C9.36101 16.8327 10.1134 16.3042 10.9564 16.3042H13.411C14.2708 16.3042 15.0344 16.8537 15.3075 17.669L18.7987 28.0929C18.8673 28.2976 18.8997 28.5231 18.7648 28.6917C18.3963 29.1522 17.0395 29.9999 12.0451 29.9999C7.11888 29.9999 5.7317 29.1752 5.34109 28.7108C5.19217 28.5337 5.22813 28.2907 5.30663 28.0731Z"
+                                    stroke="black" stroke-width="1.5" />
+                                <path d="M7.58789 11.4126C9.5827 12.7016 10.3308 14.9036 10.3308 15.9778" stroke="black"
+                                    stroke-linecap="round" />
+                                <path d="M10.6738 12.3916C11.6712 13.1282 12.0453 14.3865 12.0453 15.0003"
+                                    stroke="black" stroke-linecap="round" />
+                                <path d="M17.188 12.0654C14.4451 12.7176 13.4773 14.6741 13.4773 15.9785" stroke="black"
+                                    stroke-linecap="round" />
+                                <path
+                                    d="M21.5125 4.78349L21.5303 5.70142L22.2311 6.34208L22.8407 6.89839L22.0316 7.16459L21.1223 7.4632L20.7049 8.28602L20.3379 9.00633L19.8409 8.38091L19.2549 7.64119L18.29 7.51677L17.4733 7.41019L17.9545 6.75357L18.5042 6.00442L18.3344 5.10452L18.1829 4.30311L18.9912 4.53679L19.9206 4.80448L20.772 4.37091L21.4967 4.00182L21.5125 4.78349Z"
+                                    stroke="black" />
+                                <path
+                                    d="M5.87332 6.04163L5.62194 7.03867L6.18701 7.91221L6.62729 8.59073L5.79095 8.65369L4.71617 8.73377L4.01801 9.51533L3.47531 10.1231L3.15455 9.38719L2.74153 8.43875L1.74401 8.04898L0.969487 7.74574L1.60641 7.2274L2.42572 6.56077L2.50795 5.53904L2.57277 4.74413L3.28657 5.16051L4.20573 5.69508L5.25484 5.45486L6.06837 5.26675L5.87332 6.04163Z"
+                                    stroke="black" />
+                                <path
+                                    d="M14.3199 7.70676L13.4795 8.66702L13.6012 9.90594L13.6779 10.6885L12.9269 10.4031L11.6991 9.93545L10.4818 10.436L9.71799 10.7497L9.77402 9.9324L9.86051 8.6959L8.99926 7.76599L8.43122 7.15159L9.2374 6.95645L10.5228 6.64629L11.1968 5.56548L11.6091 4.90376L12.0497 5.5676L12.7471 6.61923L14.0296 6.89482L14.8724 7.0746L14.3199 7.70676Z"
+                                    stroke="black" />
+                            </svg>
+                        </div>
+                        <div class="item_title">Наземные фонтаны</div>
+                        <p class="item_description">Серебряные и золотые <br> каскады</p>
+                    </div>
+                    <div class="comfort-magic__item">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <g clip-path="url(#clip0_50_598)">
+                                    <path
+                                        d="M10.3422 13.577L1.46045 22.4605M11.9999 15.4387L11.7256 15.713C11.0885 16.3539 10.7302 17.2204 10.7286 18.1241C10.7269 19.0278 11.0822 19.8956 11.717 20.5387L12.2862 21.1147M14.3227 4.29932L19.6199 9.59646L14.4856 16.3456C14.4116 16.4428 14.3176 16.5231 14.21 16.581C14.1024 16.639 13.9836 16.6732 13.8617 16.6815C13.7398 16.6898 13.6175 16.6719 13.5031 16.629C13.3886 16.5862 13.2847 16.5194 13.1982 16.433L7.48616 10.721C7.39945 10.6346 7.33225 10.5307 7.28908 10.4161C7.24591 10.3016 7.22777 10.1791 7.23589 10.057C7.24402 9.93483 7.2782 9.81585 7.33616 9.70802C7.39411 9.6002 7.47449 9.50605 7.57188 9.43189L14.3227 4.29932Z"
+                                        stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path
+                                        d="M17.1839 18.1335L17.957 18.905M21.9856 18.1335L21.2108 18.905M17.1839 22.4604L17.957 21.6872M21.9856 22.4604L21.2108 21.6872M13.6045 3.58267C13.4745 3.45632 13.3749 3.30217 13.313 3.13181C13.2549 2.97766 13.2389 2.81077 13.2668 2.64838C13.2846 2.49929 13.3508 2.36018 13.4553 2.25238C13.5605 2.14724 13.693 2.08381 13.853 2.06209L21.3222 1.36609C21.4758 1.35241 21.6304 1.37593 21.773 1.43467C21.9286 1.4976 22.07 1.5912 22.1887 1.70989C22.3074 1.82857 22.401 1.96992 22.4639 2.12552C22.5226 2.26812 22.5462 2.42277 22.5325 2.57638L21.857 10.0678C21.8389 10.2163 21.7727 10.3548 21.6685 10.4621C21.5605 10.5676 21.4207 10.6345 21.2708 10.6524C21.1131 10.6789 20.9513 10.6641 20.801 10.6095C20.6347 10.5518 20.4831 10.4581 20.357 10.3352L13.6045 3.58267Z"
+                                        stroke="black" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_50_598">
+                                        <rect width="24" height="24" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="item_title">Петарды</div>
+                        <p class="item_description">Весёлые хлопушки для <br> смеха</p>
+                    </div>
+                    <div class="comfort-magic__item">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <path
+                                    d="M12.55 3.43997C12.118 2.50897 11.902 2.04397 11.521 2.00497C11.14 1.96597 10.847 2.37797 10.259 3.20297L10.107 3.41697C9.94098 3.65097 9.85698 3.76797 9.73698 3.83897C9.61698 3.90897 9.47398 3.92597 9.18698 3.95797L8.92698 3.98797C7.91698 4.09997 7.41298 4.15597 7.26298 4.50797C7.11298 4.85897 7.41698 5.27297 8.02398 6.09997L8.18198 6.31397C8.35398 6.54897 8.43998 6.66597 8.47198 6.80397C8.50398 6.94197 8.47598 7.08397 8.42198 7.36797L8.37198 7.62697C8.17998 8.62697 8.08398 9.12697 8.37198 9.38397C8.66098 9.63997 9.14198 9.48297 10.105 9.16897L10.354 9.08797C10.628 8.99797 10.764 8.95397 10.904 8.96797C11.044 8.98197 11.17 9.05397 11.423 9.19797L11.653 9.32797C12.543 9.83397 12.988 10.087 13.316 9.89397C13.644 9.70097 13.638 9.18997 13.626 8.16897L13.622 7.90497C13.619 7.61497 13.617 7.46897 13.672 7.34097C13.727 7.21197 13.832 7.11397 14.043 6.91897L14.235 6.74097C14.977 6.05297 15.348 5.70897 15.262 5.33297C15.177 4.95797 14.692 4.79897 13.722 4.48197L13.47 4.39997C13.194 4.30997 13.056 4.26497 12.95 4.16997C12.845 4.07697 12.784 3.94497 12.661 3.67997L12.55 3.43997Z"
+                                    stroke="black" stroke-width="1.5" />
+                                <path
+                                    d="M11 22C10.666 19.833 10.2 14.8 11 12M14.5 22C14.5 20.875 14.67 19.484 15.128 18M22 9.5C19.8 10.783 18.206 12.357 17.069 14"
+                                    stroke="black" stroke-width="1.5" stroke-linecap="round" />
+                                <path
+                                    d="M5.00007 13.2681C5.00007 13.2681 5.65007 14.0151 6.22307 14.1681C6.79607 14.3231 7.73307 14.0001 7.73307 14.0001C7.73307 14.0001 6.98407 14.6501 6.83107 15.2221C6.67707 15.7951 7.00107 16.7321 7.00107 16.7321C7.00107 16.7321 6.35107 15.9841 5.77807 15.8301C5.20507 15.6771 4.26807 16.0001 4.26807 16.0001C4.26807 16.0001 5.01607 15.3501 5.16907 14.7771C5.32207 14.2041 5.00007 13.2681 5.00007 13.2681Z"
+                                    stroke="black" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="item_title">Летающие фейерверки</div>
+                        <p class="item_description">Магия в ночном небе</p>
+                    </div>
+                    <div class="comfort-magic__item">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <path
+                                    d="M6.5 20C4.98333 20 3.68767 19.475 2.613 18.425C1.53833 17.375 1.00067 16.0917 1 14.575C1 13.275 1.39167 12.1167 2.175 11.1C2.95833 10.0833 3.98333 9.43333 5.25 9.15C5.66667 7.61667 6.5 6.375 7.75 5.425C9 4.475 10.4167 4 12 4C13.95 4 15.6043 4.67933 16.963 6.038C18.3217 7.39667 19.0007 9.05067 19 11C20.15 11.1333 21.1043 11.6293 21.863 12.488C22.6217 13.3467 23.0007 14.3507 23 15.5C23 16.75 22.5627 17.8127 21.688 18.688C20.8133 19.5633 19.7507 20.0007 18.5 20H6.5ZM6.5 18H18.5C19.2 18 19.7917 17.7583 20.275 17.275C20.7583 16.7917 21 16.2 21 15.5C21 14.8 20.7583 14.2083 20.275 13.725C19.7917 13.2417 19.2 13 18.5 13H17V11C17 9.61667 16.5123 8.43733 15.537 7.462C14.5617 6.48667 13.3827 5.99933 12 6C10.6173 6.00067 9.43833 6.48833 8.463 7.463C7.48767 8.43767 7 9.61667 7 11H6.5C5.53333 11 4.70833 11.3417 4.025 12.025C3.34167 12.7083 3 13.5333 3 14.5C3 15.4667 3.34167 16.2917 4.025 16.975C4.70833 17.6583 5.53333 18 6.5 18Z"
+                                    fill="black" />
+                            </svg>
+                        </div>
+                        <div class="item_title">Цветной дым</div>
+                        <p class="item_description">Яркие фото и эмоции</p>
+                    </div>
+                    <div class="comfort-magic__item">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <path d="M19 18C17.5 12.5 12 11 12 11C12 11 8 14.5 8 21" stroke="black"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M2 10.025C3.333 9.01498 7.2 7.80198 12 11.035C13.167 9.34998 16.8 6.38498 22 8.00298"
+                                    stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                <path
+                                    d="M15 5C14 5.667 12 7.8 12 11C11.667 9.333 10 5.6 6 4M6 14C6.987 13 9.552 11 11.92 11C12.906 12.167 13.807 14 13.4 18M3.15 3.1H3.1M16.95 3.1H16.9M20.55 12.501H20.5M13.035 20.9H12.985M4.15 15.9H4.1M17.95 11.1H17.9M11.05 4.1H11M3.2 3.1C3.2 3.12652 3.18946 3.15196 3.17071 3.17071C3.15196 3.18946 3.12652 3.2 3.1 3.2C3.07348 3.2 3.04804 3.18946 3.02929 3.17071C3.01054 3.15196 3 3.12652 3 3.1C3 3.07348 3.01054 3.04804 3.02929 3.02929C3.04804 3.01054 3.07348 3 3.1 3C3.12652 3 3.15196 3.01054 3.17071 3.02929C3.18946 3.04804 3.2 3.07348 3.2 3.1ZM17 3.1C17 3.12652 16.9895 3.15196 16.9707 3.17071C16.952 3.18946 16.9265 3.2 16.9 3.2C16.8735 3.2 16.848 3.18946 16.8293 3.17071C16.8105 3.15196 16.8 3.12652 16.8 3.1C16.8 3.07348 16.8105 3.04804 16.8293 3.02929C16.848 3.01054 16.8735 3 16.9 3C16.9265 3 16.952 3.01054 16.9707 3.02929C16.9895 3.04804 17 3.07348 17 3.1ZM20.6 12.501C20.6 12.5141 20.5974 12.5271 20.5924 12.5393C20.5874 12.5514 20.58 12.5624 20.5707 12.5717C20.5614 12.581 20.5504 12.5884 20.5383 12.5934C20.5261 12.5984 20.5131 12.601 20.5 12.601C20.4869 12.601 20.4739 12.5984 20.4617 12.5934C20.4496 12.5884 20.4386 12.581 20.4293 12.5717C20.42 12.5624 20.4126 12.5514 20.4076 12.5393C20.4026 12.5271 20.4 12.5141 20.4 12.501C20.4 12.4745 20.4105 12.449 20.4293 12.4303C20.448 12.4115 20.4735 12.401 20.5 12.401C20.5265 12.401 20.552 12.4115 20.5707 12.4303C20.5895 12.449 20.6 12.4745 20.6 12.501ZM13.085 20.9C13.085 20.9265 13.0745 20.952 13.0557 20.9707C13.037 20.9895 13.0115 21 12.985 21C12.9585 21 12.933 20.9895 12.9143 20.9707C12.8955 20.952 12.885 20.9265 12.885 20.9C12.885 20.8735 12.8955 20.848 12.9143 20.8293C12.933 20.8105 12.9585 20.8 12.985 20.8C13.0115 20.8 13.037 20.8105 13.0557 20.8293C13.0745 20.848 13.085 20.8735 13.085 20.9ZM4.2 15.9C4.2 15.9265 4.18946 15.952 4.17071 15.9707C4.15196 15.9895 4.12652 16 4.1 16C4.07348 16 4.04804 15.9895 4.02929 15.9707C4.01054 15.952 4 15.9265 4 15.9C4 15.8735 4.01054 15.848 4.02929 15.8293C4.04804 15.8105 4.07348 15.8 4.1 15.8C4.12652 15.8 4.15196 15.8105 4.17071 15.8293C4.18946 15.848 4.2 15.8735 4.2 15.9ZM18 11.1C18 11.1265 17.9895 11.152 17.9707 11.1707C17.952 11.1895 17.9265 11.2 17.9 11.2C17.8735 11.2 17.848 11.1895 17.8293 11.1707C17.8105 11.152 17.8 11.1265 17.8 11.1C17.8 11.0735 17.8105 11.048 17.8293 11.0293C17.848 11.0105 17.8735 11 17.9 11C17.9265 11 17.952 11.0105 17.9707 11.0293C17.9895 11.048 18 11.0735 18 11.1ZM11.1 4.1C11.1 4.12652 11.0895 4.15196 11.0707 4.17071C11.052 4.18946 11.0265 4.2 11 4.2C10.9735 4.2 10.948 4.18946 10.9293 4.17071C10.9105 4.15196 10.9 4.12652 10.9 4.1C10.9 4.07348 10.9105 4.04804 10.9293 4.02929C10.948 4.01054 10.9735 4 11 4C11.0265 4 11.052 4.01054 11.0707 4.02929C11.0895 4.04804 11.1 4.07348 11.1 4.1Z"
+                                    stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="item_title">И многое другое</div>
+                        <p class="item_description">Более 500 позиций</p>
+                    </div>
                 </div>
             </div>
         </section>
-    </main>
+        <section class="why-us">
+            <img src="assets/images/why-us_bg1.png" alt="why-us_bg1.png" class="bg1">
+            <img src="assets/images/why-us_bg2.png" alt="why-us_bg2.png" class="bg2">
+            <div class="container">
+                <h2 class="why-us_title">
+                    Почему выбирают нас?
+                </h2>
+                <p class="why-us_description">
+                    С нами тепло и надёжно
+                </p>
+                <div class="why-us_block">
+                    <div class="item">
+                        <div class="item_title">10+ лет</div>
+                        <p class="item_description">Создаём праздники по <br> всей стране</p>
+                    </div>
+                    <div class="item">
+                        <div class="item_title">500+</div>
+                        <p class="item_description">Наименований всегда в <br> наличии</p>
+                    </div>
+                    <div class="item">
+                        <div class="item_title">24 часа</div>
+                        <p class="item_description">Бережная сборка и <br> отправка</p>
+                    </div>
+                </div>
+
+                <p class="info_text">
+                    <img src="assets/images/info_icon.svg" alt="info_icon.svg">
+                    Работаем с ИП и ООО. Все сертификаты в порядке — для вашего спокойствия
+                </p>
+
+                <div class="how-it-works">
+                    <h2 class="how-it-works_title">Как мы работаем</h2>
+                    <p class="how-it-works_description">Четыре шага к вашему празднику</p>
+                    <div class="how-it-works_block">
+                        <div class="line"></div>
+                        <div class="block_item">
+                            <div class="icon-block">
+                                <img src="assets/images/how-it-works_icon1.svg" alt="how-it-works_icon1.svg"
+                                    class="icon">
+                                <div class="number">1</div>
+                            </div>
+                            <div class="item_title">
+                                Заявка
+                            </div>
+                            <p class="item_description">Это просто и <br> быстро</p>
+                        </div>
+                        <div class="block_item">
+                            <div class="icon-block">
+                                <img src="assets/images/how-it-works_icon2.svg" alt="how-it-works_icon2.svg"
+                                    class="icon">
+                                <div class="number">2</div>
+                            </div>
+                            <div class="item_title">
+                                Консультация
+                            </div>
+                            <p class="item_description">Подберём ассортимент под <br> ваш бюджет</p>
+
+                        </div>
+                        <div class="block_item">
+                            <div class="icon-block">
+                                <img src="assets/images/how-it-works_icon3.svg" alt="how-it-works_icon3.svg"
+                                    class="icon">
+                                <div class="number">3</div>
+                            </div>
+                            <div class="item_title">
+                                Резерв и оплата
+                            </div>
+                            <p class="item_description">Фиксируем цены, <br> готовим документы</p>
+                        </div>
+                        <div class="block_item">
+                            <div class="icon-block">
+                                <img src="assets/images/how-it-works_icon4.svg" alt="how-it-works_icon4.svg"
+                                    class="icon">
+                                <div class="number">4</div>
+                            </div>
+                            <div class="item_title">
+                                Доставка
+                            </div>
+                            <p class="item_description">Бережная упаковка и <br>отправка</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+    </div>
 
     <script src="assets/js/script.js" defer></script>
 </body>

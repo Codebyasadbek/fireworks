@@ -11,6 +11,10 @@
      7. Кнопки
      8. Адаптив (планшет / мобильные)
    ===================================================================== */
+.wrapper {
+  overflow: hidden;
+}
+
 /* ============ 1. Переменные ============ */
 /* ============ 2. Подключение шрифта Gilroy ============
    Раскомментируйте блок и положите файлы шрифта в assets/fonts/,
@@ -84,7 +88,7 @@ html {
 }
 
 body {
-  font-family: "Gilroy", sans-serif;
+  font-family: "Gilroy", "Manrope", sans-serif;
   color: #5C6B7A;
   background-color: #FFFFFF;
   line-height: 1.5;
@@ -93,6 +97,14 @@ body {
 }
 
 .container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+.inner_container {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
@@ -115,6 +127,11 @@ body {
   margin: 0 auto;
   padding: 26px;
 }
+@media screen and (max-width: 480px) {
+  .header_container {
+    padding: 0;
+  }
+}
 
 .logo {
   width: 70px;
@@ -130,7 +147,6 @@ body {
 .hero {
   position: relative;
   min-height: 720px;
-  overflow: hidden;
   background-color: #F6EFE8;
 }
 .hero__bg, .hero__bg-img {
@@ -160,8 +176,9 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
   color: #F97316;
-  font-family: "Gilroy", sans-serif;
+  font-family: "Gilroy", "Manrope", sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
@@ -181,7 +198,7 @@ body {
   margin-bottom: 8px;
   max-width: 513px;
   color: #2D2420;
-  font-family: "Gilroy", sans-serif;
+  font-family: "Gilroy", "Manrope", sans-serif;
   font-size: 48px;
   font-style: normal;
   font-weight: 800;
@@ -190,7 +207,7 @@ body {
 .hero__text {
   max-width: 588px;
   color: #8A7E78;
-  font-family: "Gilroy", sans-serif;
+  font-family: "Gilroy", "Manrope", sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 600;
@@ -202,7 +219,65 @@ body {
   gap: 14px;
   margin-top: 36px;
 }
+.hero__partners-mobile {
+  display: none;
+}
 
+/* ============ Бегущая строка (Ticker) ============ */
+.ticker {
+  position: absolute;
+  bottom: -16px;
+  left: -2%;
+  width: 104%;
+  z-index: 5;
+  padding: 8px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  background: #FFF8F3;
+  transform: rotate(-0.2deg);
+  transform-origin: center;
+}
+.ticker__track {
+  display: flex;
+  width: -moz-max-content;
+  width: max-content;
+  animation: ticker-scroll 25s linear infinite;
+  will-change: transform;
+}
+.ticker__group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.ticker__item {
+  color: #7B5040;
+  font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  display: block;
+}
+.ticker__star {
+  font-size: 14px;
+  color: #F97316;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 /* ============ 7. Кнопки ============ */
 .btn {
   display: inline-flex;
@@ -211,7 +286,7 @@ body {
   padding: 8px 16px;
   border: none;
   color: #FFF;
-  font-family: "Gilroy", sans-serif;
+  font-family: "Gilroy", "Manrope", sans-serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 700;
@@ -257,7 +332,7 @@ body {
 }
 @media (max-width: 768px) {
   .hero {
-    min-height: 640px;
+    min-height: 756px;
   }
   .hero__overlay {
     background: linear-gradient(180deg, #F6EFE8 0%, rgba(246, 239, 232, 0.92) 42%, rgba(246, 239, 232, 0.55) 68%, rgba(246, 239, 232, 0.2) 100%);
@@ -272,20 +347,32 @@ body {
 }
 @media (max-width: 480px) {
   .container {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
   }
   .header {
     padding: 20px;
+    padding-top: 8px;
+    padding-left: 8px;
+    padding-bottom: 0;
+  }
+  .header .logo {
+    width: 52px;
+    height: 52px;
   }
   .logo__text-bottom {
     font-size: 18px;
   }
+  .hero__overlay {
+    background: linear-gradient(180deg, #FFF8F0 0%, #FFF8F0 15%, #FFFFFF 40%, rgba(255, 255, 255, 0.75) 60%, rgba(255, 255, 255, 0) 80%);
+    height: 100%;
+  }
   .hero__container {
-    padding-top: 120px;
+    padding-top: 65px;
   }
   .hero__title {
-    font-size: 32px;
+    font-size: 24px;
+    margin-top: 24px;
   }
   .hero__title br {
     display: none;
@@ -296,8 +383,579 @@ body {
   .hero__actions {
     flex-direction: column;
     align-items: stretch;
+    margin-top: 24px;
+    gap: 8px;
   }
   .hero .btn {
     width: 100%;
+    font-size: 15px;
+  }
+  .hero__badge {
+    color: #F97316;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 8px 15px 8px 23px;
+    border-radius: 16px;
+    border: 1px solid rgba(249, 115, 22, 0.15);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(40px);
+    white-space: nowrap;
+  }
+  .hero__partners-mobile {
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    padding: 0 20px;
+  }
+  .hero__partners-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    text-align: left;
+  }
+  .hero__partners-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+  }
+  .hero__partners-title {
+    max-width: 261px;
+    width: 100%;
+    color: #000;
+    text-align: center;
+    font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+  }
+  .hero__partners-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .hero__partner-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    border-radius: 16px;
+    border: 1px solid #F6D4C4;
+    background: #FFF8F3;
+    padding: 8px 6px;
+    color: #7B5040;
+    font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .ticker {
+    display: none;
+  }
+}
+.comfort-magic {
+  padding: 100px 0;
+}
+.comfort-magic_title {
+  color: #2D2420;
+  text-align: center;
+  font-family: "Gilroy", "Manrope", sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 16px;
+}
+.comfort-magic_description {
+  max-width: 578px;
+  color: #8A7E78;
+  text-align: center;
+  font-family: "Gilroy", "Manrope", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0 auto 48px;
+}
+.comfort-magic__blocks {
+  max-width: 960px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.comfort-magic__item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 16px;
+  border: 1px solid rgba(127, 138, 149, 0.1);
+  background: #FFF;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
+  padding: 32px 24px;
+}
+.comfort-magic__item .icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.comfort-magic__item .item_title {
+  color: #2E3448;
+  font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 8px;
+}
+.comfort-magic__item .item_description {
+  color: #8A7E78;
+  text-align: center;
+  font-family: "SF Pro Display", "SF Pro Text", "SF Pro", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+@media (max-width: 768px) {
+  .comfort-magic {
+    margin-bottom: 60px;
+    padding: 0;
+  }
+  .comfort-magic_title {
+    text-align: left;
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  .comfort-magic_description {
+    text-align: left;
+    font-size: 16px;
+    line-height: normal;
+    max-width: 100%;
+    margin: 0 0 32px 0;
+  }
+  .comfort-magic .container {
+    padding: 0 20px;
+  }
+  .comfort-magic__blocks {
+    display: flex;
+    grid-template-columns: none;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0;
+    margin-right: -20px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .comfort-magic__blocks::-webkit-scrollbar {
+    display: none;
+  }
+  .comfort-magic__blocks {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .comfort-magic__item {
+    flex: 0 0 200px;
+    width: 200px;
+    scroll-snap-align: start;
+    padding: 24px 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+  .comfort-magic__item .icon {
+    margin-bottom: 16px;
+  }
+  .comfort-magic__item .item_title {
+    font-size: 20px;
+  }
+  .comfort-magic__item .item_description {
+    font-size: 16px;
+  }
+}
+
+.why-us {
+  background: linear-gradient(180deg, #FFF8F0 0%, #FFEDE1 116.02%);
+  padding: 160px 0;
+  position: relative;
+  overflow: hidden;
+}
+.why-us .bg1 {
+  position: absolute;
+  top: -101px;
+  left: -30px;
+  width: 459px;
+  height: 503px;
+}
+@media screen and (max-width: 768px) {
+  .why-us .bg1 {
+    display: none;
+  }
+}
+.why-us .bg2 {
+  width: 491px;
+  height: 595px;
+  position: absolute;
+  bottom: 307px;
+  right: 0;
+}
+@media screen and (max-width: 768px) {
+  .why-us .bg2 {
+    display: none;
+  }
+}
+.why-us_title {
+  color: #2D2420;
+  text-align: center;
+  font-family: "Gilroy", "Manrope", sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 16px;
+}
+.why-us_description {
+  color: #8A7E78;
+  text-align: center;
+  font-family: "Gilroy", "Manrope", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 50px;
+}
+.why-us .why-us_block {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.why-us .why-us_block .item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  padding-right: 30px;
+}
+.why-us .why-us_block .item:last-child {
+  border: none;
+  padding-right: 0;
+}
+.why-us .why-us_block .item_title {
+  color: #F97316;
+  text-align: center;
+  font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.why-us .why-us_block .item_description {
+  color: #8F8F8F;
+  text-align: center;
+  font-family: "SF Pro Display", "SF Pro Text", "SF Pro", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 510;
+  line-height: normal;
+}
+.why-us .info_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  color: #7C2D12;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.why-us .info_text img {
+  width: 36px;
+  height: 36px;
+}
+@media (max-width: 768px) {
+  .why-us {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+  .why-us_title {
+    color: #2D2420;
+    text-align: center;
+    font-family: "Gilroy", "Manrope", sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 8px;
+    text-align: center;
+  }
+  .why-us_description {
+    color: #7C2D12;
+    text-align: center;
+    font-family: "Gilroy", "Manrope", sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 32px;
+  }
+  .why-us .why-us_block {
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 40px;
+  }
+  .why-us .why-us_block .item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 16px 0;
+    width: 100%;
+  }
+  .why-us .why-us_block .item:last-child {
+    border-bottom: none;
+  }
+  .why-us .why-us_block .item_title {
+    font-size: 18px;
+    text-align: left;
+    flex-shrink: 0;
+  }
+  .why-us .why-us_block .item_description {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    max-width: 210px;
+    text-align: center;
+  }
+  .why-us .why-us_block .item_description br {
+    display: none;
+  }
+  .why-us .info_text {
+    justify-content: flex-start;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    text-align: left;
+  }
+  .why-us .info_text img {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+  }
+}
+.why-us .how-it-works {
+  margin-top: 200px;
+  position: relative;
+}
+.why-us .how-it-works_title {
+  color: #2D2420;
+  text-align: center;
+  font-family: "Gilroy", "Manrope", sans-serif;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 16px;
+}
+.why-us .how-it-works_description {
+  color: #8A7E78;
+  text-align: center;
+  font-family: "Gilroy", "Manrope", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 50px;
+}
+.why-us .how-it-works_block {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.why-us .how-it-works_block .line {
+  position: absolute;
+  top: 40px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 0;
+  border-top: 2px dashed #F7B56A;
+  z-index: 1;
+  pointer-events: none;
+}
+.why-us .how-it-works .block_item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.why-us .how-it-works .block_item .icon-block {
+  position: relative;
+  border-radius: 46px;
+  background: #FFF;
+  box-shadow: 0 0 20px 0 rgba(254, 153, 127, 0.05);
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.why-us .how-it-works .block_item .icon-block .icon {
+  width: 32px;
+  height: 32px;
+}
+.why-us .how-it-works .block_item .icon-block .number {
+  width: 29px;
+  height: 28px;
+  position: absolute;
+  right: -5px;
+  top: -4px;
+  border-radius: 46px;
+  background: rgba(254, 240, 229, 0.9);
+  box-shadow: 0 0 20px 0 rgba(254, 153, 127, 0.05);
+  color: #F97316;
+  font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.why-us .how-it-works .block_item .item_title {
+  color: #000;
+  text-align: center;
+  font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin-bottom: 8px;
+}
+.why-us .how-it-works .block_item .item_description {
+  color: #8F8F8F;
+  text-align: center;
+  font-family: "SF Pro Display", "SF Pro Text", "SF Pro", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+@media (max-width: 768px) {
+  .why-us .how-it-works {
+    margin-top: 60px;
+  }
+  .why-us .how-it-works_title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .why-us .how-it-works_description {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #8A7E78;
+  }
+  .why-us .how-it-works_block {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+  .why-us .how-it-works_block .line {
+    position: absolute;
+    top: 26px;
+    bottom: 26px;
+    left: 25.5px;
+    right: auto;
+    width: 0;
+    height: auto;
+    border-top: none;
+    border-left: 1.5px dashed #F7B56A;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .why-us .how-it-works .block_item {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    -moz-column-gap: 16px;
+         column-gap: 16px;
+    row-gap: 2px;
+    align-items: center;
+    text-align: left;
+    position: relative;
+    z-index: 2;
+  }
+  .why-us .how-it-works .block_item .icon-block {
+    grid-column: 1;
+    grid-row: 1/span 2;
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 50%;
+    padding: 0;
+    margin-bottom: 0;
+    background: #FFFFFF;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
+  .why-us .how-it-works .block_item .icon-block .icon {
+    display: none;
+  }
+  .why-us .how-it-works .block_item .icon-block .number {
+    position: static;
+    background: transparent;
+    box-shadow: none;
+    color: #F97316;
+    font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    width: auto;
+    height: auto;
+  }
+  .why-us .how-it-works .block_item .item_title {
+    grid-column: 2;
+    grid-row: 1;
+    color: #2E3448;
+    font-family: "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 0;
+    line-height: normal;
+  }
+  .why-us .how-it-works .block_item .item_description {
+    grid-column: 2;
+    grid-row: 2;
+    color: #8A7E78;
+    font-family: "SF Pro Display", "SF Pro Text", "SF Pro", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    line-height: normal;
+  }
+  .why-us .how-it-works .block_item .item_description br {
+    display: none;
   }
 }/*# sourceMappingURL=style.css.map */
