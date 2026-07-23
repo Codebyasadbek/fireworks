@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function highlight(btn) {
     btn.animate(
       [{ transform: 'translateX(0)' }, { transform: 'translateX(-4px)' },
-       { transform: 'translateX(4px)' }, { transform: 'translateX(0)' }],
+      { transform: 'translateX(4px)' }, { transform: 'translateX(0)' }],
       { duration: 220 }
     );
   }
@@ -131,8 +131,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   /* ----- Маска и валидация телефона ----- */
-  const phoneInput = form.querySelector('input[name="phone"]');
-
   function formatPhone(value) {
     let d = value.replace(/\D/g, '');
     if (d.startsWith('8')) d = '7' + d.slice(1);
@@ -148,11 +146,11 @@ document.addEventListener('DOMContentLoaded', function () {
     return out;
   }
 
-  if (phoneInput) {
+  document.querySelectorAll('input[name="phone"]').forEach(function (phoneInput) {
     phoneInput.addEventListener('input', function () {
       phoneInput.value = formatPhone(phoneInput.value);
     });
-  }
+  });
 
 
   /* ----- Валидация формы и отправка ----- */
