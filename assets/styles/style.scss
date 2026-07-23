@@ -1731,68 +1731,72 @@ body {
 .price-list {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(100deg,
-        #FDF5EF 0%,
-        #FCEBDD 36%,
-        #F9CDA4 72%,
-        #F3A868 100%);
+    background: linear-gradient(270deg, #FFAB72 0%, #FFF8F0 100%);
 
     &__container {
         position: relative;
         z-index: 2;
-        padding-top: 92px;
-        padding-bottom: 92px;
+        padding-top: 160px;
+        padding-bottom: 225px;
     }
 
     &__content {
-        max-width: 440px;
+        max-width: 465px;
     }
 
     &__badge {
         display: inline-block;
-        padding: 8px 18px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.55);
+        padding: 8px 8px 8px 16px;
+        border-radius: 16px;
+        border: 1px solid rgba(249, 115, 22, 0.05);
+        background: rgba(248, 223, 194, 0.40);
+        backdrop-filter: blur(20px);
+
+
         color: #F97316;
         font-family: $font-main;
-        font-size: 13px;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
     }
 
     &__title {
-        margin-top: 22px;
-        color: #2D2D3B;
+        margin-top: 16px;
+        color: #2E3448;
         font-family: $font-main;
-        font-size: 36px;
-        font-weight: 800;
-        line-height: 1.18;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
     }
 
     &__subtitle {
         margin-top: 16px;
-        max-width: 400px;
-        color: #8A8790;
+        max-width: 530px;
+        color: #8A7E78;
         font-family: $font-main;
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 1.4;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
     }
 
     &__form {
-        margin-top: 28px;
+        margin-top: 48px;
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        gap: 16px;
     }
 
     // Переключатель «Я ИП/Юрлицо / Физическое лицо» (работает без JS)
     &__toggle {
         display: flex;
-        padding: 5px;
-        border-radius: 999px;
-        background: #D9D4D1;
+        padding: 8px 12px;
+        border-radius: 32px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        background: rgba(186, 187, 189, 0.80);
+        backdrop-filter: blur(20px);
     }
 
     &__toggle-input {
@@ -1806,20 +1810,23 @@ body {
     &__toggle-label {
         flex: 1;
         text-align: center;
-        padding: 12px 16px;
-        border-radius: 999px;
-        color: #7E7B84;
-        font-family: $font-main;
-        font-size: 16px;
-        font-weight: 600;
+        padding: 8px 16px;
+        border-radius: 32px;
+        color: #2E3448;
+        font-family: $font-rounded;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+
         cursor: pointer;
         transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    &__toggle-input:checked + &__toggle-label {
-        background: $color-white;
-        color: #2D2D3B;
-        box-shadow: 0 2px 8px rgba(45, 36, 32, 0.12);
+    &__toggle-input:checked+&__toggle-label {
+        border-radius: 32px;
+        background: #FFF;
+        color: #2E3448;
     }
 
     // Поля ввода
@@ -1831,45 +1838,43 @@ body {
     &__field-icon {
         position: absolute;
         top: 50%;
-        left: 20px;
+        left: 16px;
         transform: translateY(-50%);
         display: inline-flex;
-        color: #A79C97;
+        color: #777474;
         pointer-events: none;
     }
 
     &__input {
         width: 100%;
         padding: 17px 20px 17px 52px;
-        border: 1px solid transparent;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.55);
-        color: #2D2D3B;
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.80);
+        color: #777474;
         font-family: $font-main;
-        font-size: 17px;
-        font-weight: 500;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
 
         &::placeholder {
-            color: #A79C97;
-        }
-
-        &:focus {
-            outline: none;
-            border-color: #F97316;
-            background: $color-white;
+            color: #777474;
+            font-size: 20px;
         }
     }
 
     &__submit {
-        margin-top: 4px;
+        margin-top: 16px;
         padding: 17px 24px;
         border: none;
-        border-radius: 12px;
+        border-radius: 16px;
         background: #F97316;
-        color: $color-white;
-        font-family: $font-main;
-        font-size: 18px;
+        color: #FFF;
+        font-size: 24px;
+        font-style: normal;
         font-weight: 700;
+        line-height: normal;
         cursor: pointer;
         transition: background-color 0.2s ease;
 
@@ -1883,9 +1888,9 @@ body {
         position: absolute;
         right: 0;
         bottom: 0;
-        width: 47%;
-        max-width: 680px;
-        height: auto;
+        width: 100%;
+        max-width: 639px;
+        height: 717px;
         z-index: 1;
         pointer-events: none;
         user-select: none;
@@ -1913,19 +1918,18 @@ body {
 
 @media (max-width: 480px) {
     .price-list {
+        padding-top: 40px;
+        padding-bottom: 80px;
         // На мобильном — только тёплый градиент без планшета
-        background: linear-gradient(160deg,
-            #FDECDD 0%,
-            #F9C99C 52%,
-            #F3A265 100%);
+        background: linear-gradient(271deg, #FFAB72 -39.97%, #FFF8F0 99.73%);
 
         &__image {
             display: none;
         }
 
         &__container {
-            padding-top: 42px;
-            padding-bottom: 46px;
+            padding-top: 40px;
+            padding-bottom: 80px;
         }
 
         &__content {
@@ -1933,30 +1937,39 @@ body {
         }
 
         &__title {
-            margin-top: 20px;
-            font-size: 30px;
+            margin-top: 16px;
+            font-size: 24px;
         }
 
         &__subtitle {
             max-width: none;
-            font-size: 18px;
+            margin-top: 16px;
+            font-size: 20px;
         }
 
         &__form {
-            margin-top: 26px;
-            gap: 14px;
+            margin-top: 32px;
+            gap: 16px;
         }
 
         &__toggle-label {
-            padding: 14px 12px;
+            padding: 8px 12px;
+            font-size: 16px;
+            font-weight: 500;
         }
 
         &__input {
-            padding: 18px 20px 18px 52px;
+            padding: 12px 16px;
+            padding-left: 48px;
         }
 
         &__submit {
-            padding: 18px 24px;
+            padding: 8px 16px;
+            font-size: 20px;
+        }
+
+        .container {
+            padding: 0 20px;
         }
     }
 }
