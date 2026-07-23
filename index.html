@@ -701,6 +701,7 @@
                 width="639" height="717" loading="lazy">
         </section>
 
+
         <!-- ============ Для уютных домашних праздников (маркетплейсы) ============ -->
         <section class="market" id="market">
             <div class="container market__container">
@@ -740,8 +741,8 @@
                     <!-- Карточка 2 — Ozon -->
                     <article class="market__card">
                         <div class="market__media">
-                            <img src="assets/images/product_img2.png" alt="Набор ракет «SUPER STARS»" class="market__img"
-                                width="610" height="442" loading="lazy">
+                            <img src="assets/images/product_img2.png" alt="Набор ракет «SUPER STARS»"
+                                class="market__img" width="610" height="442" loading="lazy">
                         </div>
                         <h3 class="market__name">Набор ракет «SUPER STARS»</h3>
                         <div class="market__rating">
@@ -764,6 +765,102 @@
                 </div>
             </div>
         </section>
+        <!-- ============ Подвал (Footer) ============ -->
+        <footer class="footer" id="contacts">
+            <div class="container footer__container">
+                <div class="footer__main">
+                    <!-- Левая колонка: Контакты -->
+                    <div class="footer__info">
+                        <h2 class="footer__title">Остались вопросы?</h2>
+                        <p class="footer__subtitle">Всегда на связи</p>
+
+                        <div class="footer__contacts">
+                            <div class="footer__contact-item">
+                                <span class="footer__contact-label">ТЕЛЕФОН</span>
+                                <a href="tel:89163045288" class="footer__contact-value">89163045288</a>
+                            </div>
+
+                            <div class="footer__contact-item">
+                                <span class="footer__contact-label">АДРЕС</span>
+                                <span class="footer__contact-value">Каширское шоссе 140</span>
+                            </div>
+
+                            <p class="footer__note">
+                                *ПРОДАЖИ И ВЫДАЧА ЗАКАЗОВ ОСУЩЕСТВЛЯЮТСЯ ЧЕРЕЗ ИНТЕРНЕТ-МАГАЗИН С ДОСТАВКОЙ
+                            </p>
+                        </div>
+
+                        <!-- Социальные сети -->
+                        <div class="footer__socials">
+                            <a href="https://wa.me/79163045288" class="footer__social-btn" target="_blank"
+                                rel="noopener noreferrer" aria-label="WhatsApp">
+                                <img src="assets/images/footer_watsapp.svg" alt="WhatsApp" width="28" height="28"
+                                    loading="lazy">
+                            </a>
+                            <a href="https://t.me/povelitelognya" class="footer__social-btn" target="_blank"
+                                rel="noopener noreferrer" aria-label="Telegram">
+                                <img src="assets/images/footer_tg.svg" alt="Telegram" width="28" height="28"
+                                    loading="lazy">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Правая колонка: Форма обратного звонка -->
+                    <div class="footer__card">
+                        <h3 class="footer__card-title">Перезвоните мне</h3>
+
+                        <form class="footer__form" id="footerForm" action="sendmail.php" method="post">
+                            <label class="footer__field">
+                                <span class="footer__field-icon" aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <path d="M4 21V20C4 16.69 6.69 14 10 14H14C17.31 14 20 16.69 20 20V21"
+                                            stroke="#A0A0A0" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path
+                                            d="M12 11C9.79 11 8 9.21 8 7C8 4.79 9.79 3 12 3C14.21 3 16 4.79 16 7C16 9.21 14.21 11 12 11Z"
+                                            stroke="#A0A0A0" stroke-width="1.5" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                <input type="text" name="name" class="footer__input" placeholder="Имя"
+                                    autocomplete="name" required>
+                            </label>
+
+                            <label class="footer__field">
+                                <span class="footer__field-icon" aria-hidden="true">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <path
+                                            d="M16.6289 13.891L17.0849 13.438L16.0259 12.374L15.5719 12.827L16.6289 13.891ZM18.6139 13.248L20.5249 14.287L21.2399 12.969L19.3299 11.931L18.6139 13.248ZM20.8919 16.351L19.4719 17.764L20.5289 18.827L21.9489 17.415L20.8919 16.351ZM18.6059 18.218C17.1559 18.354 13.4059 18.233 9.34393 14.195L8.28593 15.258C12.7179 19.665 16.9369 19.881 18.7459 19.712L18.6059 18.218ZM9.34393 14.195C5.47293 10.345 4.83093 7.10796 4.75093 5.70296L3.25293 5.78796C3.35293 7.55596 4.14793 11.144 8.28593 15.258L9.34393 14.195ZM10.7189 8.01496L11.0059 7.72896L9.94993 6.66596L9.66293 6.95096L10.7189 8.01496ZM11.2339 4.09396L9.97393 2.40996L8.77293 3.30996L10.0329 4.99296L11.2339 4.09396ZM5.73293 2.04296L4.16293 3.60296L5.22093 4.66696L6.78993 3.10696L5.73293 2.04296ZM10.1909 7.48296C9.66093 6.95096 9.66093 6.95096 9.66093 6.95296H9.65893L9.65593 6.95696C9.60841 7.00487 9.56586 7.05748 9.52893 7.11396C9.47493 7.19396 9.41593 7.29896 9.36593 7.43196C9.2442 7.77529 9.21388 8.14437 9.27793 8.50296C9.41193 9.36796 10.0079 10.511 11.5339 12.029L12.5919 10.965C11.1629 9.54496 10.8229 8.68096 10.7599 8.27296C10.7299 8.07896 10.7609 7.98296 10.7699 7.96096C10.7759 7.94763 10.7759 7.94563 10.7699 7.95496C10.761 7.96876 10.751 7.9818 10.7399 7.99396L10.7299 8.00396L10.7199 8.01296L10.1909 7.48296ZM11.5339 12.029C13.0609 13.547 14.2099 14.139 15.0759 14.271C15.5189 14.339 15.8759 14.285 16.1469 14.184C16.2987 14.1284 16.4406 14.0487 16.5669 13.948L16.6169 13.903L16.6239 13.897L16.6269 13.894L16.6279 13.892C16.6279 13.892 16.6289 13.891 16.0999 13.359C15.5699 12.827 15.5729 12.826 15.5729 12.826L15.5749 12.824L15.5769 12.822L15.5829 12.817L15.5929 12.807L15.6309 12.777C15.6403 12.771 15.6379 12.7716 15.6239 12.779C15.5989 12.788 15.5009 12.819 15.3042 12.789C14.8899 12.725 14.0199 12.385 12.5919 10.965L11.5339 12.029ZM9.97393 2.40896C8.95393 1.04896 6.94993 0.83296 5.73293 2.04296L6.78993 3.10696C7.32193 2.57796 8.26593 2.63296 8.77293 3.30996L9.97393 2.40896ZM4.75193 5.70396C4.73193 5.35796 4.89093 4.99596 5.22093 4.66796L4.16193 3.60396C3.62493 4.13796 3.20193 4.89396 3.25293 5.78796L4.75193 5.70396ZM19.4719 17.764C19.1979 18.038 18.9019 18.192 18.6069 18.219L18.7459 19.712C19.4809 19.643 20.0819 19.273 20.5299 18.828L19.4719 17.764ZM11.0059 7.72896C11.9909 6.74996 12.0649 5.20296 11.2349 4.09496L10.0339 4.99396C10.4369 5.53296 10.3769 6.23996 9.94893 6.66696L11.0059 7.72896ZM20.5259 14.288C21.3429 14.732 21.4699 15.778 20.8929 16.352L21.9509 17.415C23.2909 16.082 22.8779 13.859 21.2409 12.97L20.5259 14.288ZM17.0849 13.439C17.4689 13.057 18.0869 12.963 18.6149 13.249L19.3309 11.932C18.2469 11.342 16.9029 11.505 16.0269 12.375L17.0849 13.439Z"
+                                            fill="#A0A0A0" />
+                                    </svg>
+                                </span>
+                                <input type="tel" name="phone" class="footer__input" placeholder="Телефон"
+                                    autocomplete="tel" required>
+                            </label>
+
+                            <button type="submit" class="footer__submit">Отправить заявку</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Панель внизу футера (Copyright + Ссылки + Статус) -->
+                <div class="footer__bottom">
+                    <p class="footer__copyright">© Повелитель огня — дарим праздник с 2015 года</p>
+
+                    <div class="footer__links">
+                        <a href="#" class="footer__link">Политика конфиденциальности</a>
+                        <a href="#" class="footer__link">Условия использования</a>
+                    </div>
+
+                    <div class="footer__status">
+                        <span class="footer__status-dot" aria-hidden="true"></span>
+                        <span class="footer__status-text">Мы работаем прямо сейчас</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <script src="assets/js/script.js" defer></script>
